@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carb-Ai</title>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Carb-Ai"><meta name="theme-color" content="#1b7fb5">
+<script>(function(){var c=document.createElement("canvas");c.width=c.height=180;var x=c.getContext("2d"),g=x.createLinearGradient(0,0,180,180);g.addColorStop(0,"#1b7fb5");g.addColorStop(1,"#2bb3a0");x.fillStyle=g;x.fillRect(0,0,180,180);x.fillStyle="#fff";x.font="bold 104px system-ui,sans-serif";x.textAlign="center";x.textBaseline="middle";x.fillText("C",90,98);var u=c.toDataURL();["apple-touch-icon","icon"].forEach(function(r){var l=document.createElement("link");l.rel=r;l.href=u;document.head.appendChild(l)})})();</script>
+<style>
+:root{--bg:#eef6fa;--card:#fff;--tx:#0f2b3a;--mut:#5d7684;--pri:#1b7fb5;--pri2:#2bb3a0;--bd:#d9e7ef;--warn:#fff4dc;--wtx:#7a5a00;--sh:0 6px 20px rgba(20,80,110,.10);--sel:#e3f1f8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html[data-th=em]{--bg:#eef7f1;--tx:#10302a;--mut:#5a7a6e;--pri:#1f9d6b;--pri2:#5cc08a;--bd:#d5e8dd;--sel:#e0f3e8}
+html[data-th=sa]{--bg:#f7f1e8;--card:#fffaf3;--tx:#3a2f22;--mut:#85755f;--pri:#b8793a;--pri2:#d9a066;--bd:#eadfcf;--sel:#f3e8d6}
+html[data-th=mid]{--bg:#070b1a;--card:#101733;--tx:#e6eaff;--mut:#97a0cc;--bd:#222c55;--sel:#18204a;--pri:#7c8cff;--pri2:#46d6c4;--on:#071033;--warn:#3a3010;--wtx:#ffd97a;--sh:0 6px 20px rgba(0,0,0,.45)}
+html[data-th=fn]{--bg:#0a1713;--card:#12261f;--tx:#e3f4ec;--mut:#8fb3a3;--bd:#1f3a30;--sel:#173328;--pri:#3fcf8e;--pri2:#9be37a;--on:#052013;--warn:#3a3010;--wtx:#ffd97a;--sh:0 6px 20px rgba(0,0,0,.45)}
+html[data-th=ld]{--bg:#120d1f;--card:#1c1530;--tx:#efe8ff;--mut:#a89bc7;--bd:#31264f;--sel:#271d44;--pri:#a98bf0;--pri2:#e08fd0;--on:#1a0b33;--warn:#3a3010;--wtx:#ffd97a;--sh:0 6px 20px rgba(0,0,0,.45)}
+html[data-m=dark]{color-scheme:dark}
+html.tr *{transition:background-color .5s ease,color .5s ease,border-color .5s ease,box-shadow .5s ease!important}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+#app{max-width:540px;margin:0 auto;height:100%;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
+.logo{font-weight:800;font-size:21px}.logo span{background:linear-gradient(90deg,var(--pri),var(--pri2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hb{display:flex;gap:8px;align-items:center}
+.av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);font-weight:700;display:grid;place-items:center;padding:0}
+main{flex:1;min-height:0;overflow:auto;padding:0 16px 16px}
+main.cm{overflow:hidden;display:flex;flex-direction:column;padding-bottom:10px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:var(--sh);animation:in .5s cubic-bezier(.2,.9,.3,1.1) both}
+@keyframes in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+h2{font-size:17px;margin:0 0 10px}h3{margin:0 0 6px}
+label{display:block;font-size:13px;color:var(--mut);margin:10px 0 4px}
+input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1.5px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--pri);box-shadow:0 0 0 3px rgba(43,150,200,.2)}
+.row{display:flex;gap:10px}.row>*{flex:1}
+button{font:inherit;cursor:pointer;border:0;border-radius:13px;padding:12px 16px;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);font-weight:600;transition:transform .12s,opacity .2s}
+button:active{transform:scale(.96)}button:disabled{opacity:.5}
+button.sec{background:var(--bg);color:var(--tx);border:1px solid var(--bd)}
+button.w{width:100%;margin-top:12px;padding:14px}
+nav{display:flex;background:var(--card);border-top:1px solid var(--bd)}
+nav button{flex:1;background:none;color:var(--mut);border-radius:0;font-size:11px;padding:9px 2px}
+nav button.on{color:var(--pri)}nav b{display:block;font-size:21px;transition:transform .2s}nav button.on b{transform:translateY(-2px) scale(1.15)}
+.pair{display:flex;gap:10px}.pair>div{flex:1;background:var(--bg);border-radius:16px;padding:14px;text-align:center}
+.pair .n{font-size:36px;font-weight:800}.pair small{color:var(--mut)}
+.warn{background:var(--warn);color:var(--wtx);border-radius:12px;padding:10px 12px;font-size:13px;margin-top:12px}
+.mut{color:var(--mut);font-size:14px}
+.hero{background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);border-radius:20px;padding:20px;margin-bottom:14px}
+.hero h2{font-size:22px;margin:0}
+.chip{display:inline-block;background:var(--bg);border:1px solid var(--bd);border-radius:20px;padding:7px 13px;margin:3px 4px 3px 0;font-size:14px;cursor:pointer}
+.chip:active{transform:scale(.95)}
+.food{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd);gap:8px}.food:last-child{border:0}
+.badge{font-size:11px;background:var(--pri2);color:var(--on,#fff);border-radius:8px;padding:1px 6px;margin-left:6px}
+.chatv{flex:1;min-height:0;display:flex;flex-direction:column}
+#msgs{flex:1;overflow:auto;display:flex;flex-direction:column;gap:8px;padding:4px 2px 8px}
+.m{max-width:85%;padding:10px 13px;border-radius:18px;background:var(--card);border:1px solid var(--bd)}
+.m.u{align-self:flex-end;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);border:0}
+.dots span{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:var(--mut);animation:b 1s infinite}.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+.comp{display:flex;gap:8px;align-items:flex-end;background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:6px 6px 6px 14px;box-shadow:var(--sh)}
+.comp textarea{border:0;background:none;resize:none;max-height:110px;padding:8px 0;box-shadow:none!important}
+.comp button{border-radius:50%;width:42px;height:42px;padding:0;flex:none}
+#sh{position:fixed;inset:0;background:rgba(5,20,30,.55);display:none;align-items:flex-end;justify-content:center;z-index:20}
+#sh.on{display:flex}
+#sh .in{background:var(--bg);width:100%;max-width:540px;max-height:92%;overflow:auto;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));}
+@keyframes up{from{transform:translateY(60px);opacity:0}}
+.th{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.th img{width:72px;height:72px;object-fit:cover;border-radius:12px}
+.sp{width:42px;height:42px;border:4px solid var(--bd);border-top-color:var(--pri);border-radius:50%;margin:20px auto;animation:r .8s linear infinite}@keyframes r{to{transform:rotate(360deg)}}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:20px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:30}
+#toast.on{opacity:1}
+.seg{display:flex;background:var(--bg);border-radius:14px;padding:4px;margin-bottom:8px}.seg button{flex:1;background:none;color:var(--mut)}.seg button.on{background:var(--card);color:var(--tx);box-shadow:var(--sh)}
+.hist{padding:9px 0;border-bottom:1px solid var(--bd)}
+.card:nth-child(2){animation-delay:.06s}.card:nth-child(3){animation-delay:.12s}.card:nth-child(4){animation-delay:.18s}.card:nth-child(5){animation-delay:.24s}
+.hero{animation:in .5s cubic-bezier(.2,.9,.3,1.1) both}.pair>div{animation:in .55s cubic-bezier(.2,.9,.3,1.1) both}.pair>div:nth-child(2){animation-delay:.15s}
+button:active{box-shadow:0 1px 4px rgba(0,0,0,.2) inset}
+.sys{display:flex;gap:12px}.sys button{flex:1;position:relative;text-align:left;background:var(--card);color:var(--tx);border:2px solid var(--bd);padding:18px 14px;border-radius:18px;box-shadow:var(--sh);transition:border-color .25s,background-color .25s,transform .2s}
+.sys button b{font-size:19px}.sys button small{color:var(--mut)}.sys button.on{border-color:var(--pri);background:var(--sel);transform:translateY(-2px)}
+.ck{position:absolute;right:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--pri);color:var(--on,#fff);font-style:normal;font-size:13px;display:grid;place-items:center;transform:scale(0);transition:transform .3s cubic-bezier(.3,1.6,.5,1)}.sys .on .ck{transform:scale(1)}
+.seg button{transition:background-color .25s,color .25s,box-shadow .25s,transform .12s}.seg.s{margin:0;padding:3px}.seg.s button{padding:6px 11px;font-size:13px;border-radius:11px}
+.lh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}.lh label{margin:0}
+#ms{overflow:hidden;padding:0 3px;margin:0 -3px;transition:height .35s cubic-bezier(.2,.9,.3,1),opacity .16s,transform .16s}#ms.fo{opacity:0;transform:translateY(5px)}
+.col{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s cubic-bezier(.2,.9,.3,1),opacity .3s}.col.on{grid-template-rows:1fr;opacity:1}.col>div{overflow:hidden;padding:0 3px}
+.ib{background:var(--bg);color:var(--pri);border:1px solid var(--bd);width:22px;height:22px;padding:0;border-radius:50%;font-size:12px;margin-left:4px}
+.sum{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sum div{background:var(--bg);border-radius:12px;padding:9px 11px}.sum small{display:block;color:var(--mut);font-size:12px}
+#mw{display:none;position:fixed;inset:0;z-index:25}#mw.on{display:block}#mb{position:absolute;inset:0}
+#mn{position:absolute;top:calc(60px + env(safe-area-inset-top,0px));right:max(12px,calc(50vw - 258px));width:260px;background:var(--card);border:1px solid var(--bd);border-radius:18px;box-shadow:0 14px 40px rgba(0,0,0,.25);padding:10px;transform-origin:top right;animation:pop .24s cubic-bezier(.2,1.1,.4,1) both}
+#mw.out #mn{animation:popo .16s ease forwards}@keyframes pop{from{opacity:0;transform:scale(.85) translateY(-6px)}}@keyframes popo{to{opacity:0;transform:scale(.9) translateY(-6px)}}
+.mh{padding:6px 8px;font-size:13px;color:var(--mut)}.ml{padding:6px 8px 2px;font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.sw{display:flex;gap:8px;padding:6px 8px 10px}.swb{width:34px;height:34px;border-radius:50%;padding:0;border:3px solid transparent;transition:transform .2s,border-color .2s}.swb.on{border-color:var(--tx);transform:scale(1.12)}
+.mr{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;color:var(--tx);border-radius:10px;font-weight:500;padding:11px 10px;text-align:left}.mr:hover{background:var(--bg)}
+.tg{width:40px;height:22px;border-radius:11px;background:var(--bd);position:relative;transition:background-color .3s}.tg::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}.tg.on{background:var(--pri)}.tg.on::after{transform:translateX(18px)}
+.pulse{font-size:40px;animation:pu 1.2s ease-in-out infinite}@keyframes pu{50%{transform:scale(1.15);opacity:.7}}
+.bar{height:8px;border-radius:6px;background:var(--bd);overflow:hidden}.bar i{display:block;height:100%;width:40%;border-radius:6px;background:linear-gradient(90deg,var(--pri),var(--pri2));animation:shm 1.1s ease-in-out infinite}@keyframes shm{from{transform:translateX(-100%)}to{transform:translateX(250%)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.m.nw{animation:in .3s cubic-bezier(.2,.9,.3,1) both}
+#v{transition:opacity .16s ease,transform .16s ease}#v.lv{opacity:0;transform:translateY(-8px)}
+@keyframes fi{from{opacity:0}}@keyframes fo{to{opacity:0}}@keyframes dn{to{transform:translateY(70px);opacity:0}}
+#sh.on{animation:fi .25s ease both}#sh.out{animation:fo .22s ease forwards}#sh.out .in{animation:dn .22s ease forwards}
+#sh .in.up{animation:up .38s cubic-bezier(.2,.9,.3,1)}.sb.an{animation:in .35s cubic-bezier(.2,.9,.3,1) both}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.55s;animation-timing-function:ease}
 
+:root{--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1)}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}main{scroll-behavior:smooth}
+body{animation:fi .7s ease}
+@keyframes in{from{opacity:0;transform:translateY(18px) scale(.985)}}
+.card,.pair>div{animation:in .7s var(--ease) backwards}
+.hero{background-size:220% 220%;animation:in .7s var(--ease) backwards,gl 14s ease-in-out infinite}
+@keyframes gl{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+.na .card,.na .hero,.na .pair>div{animation:none}
+.card{transition:transform .5s var(--ease),box-shadow .5s var(--ease),background-color .4s,border-color .4s}
+.m.nw,.sb.an{animation:in .5s var(--ease) backwards}
+button{position:relative;overflow:hidden;touch-action:manipulation;transition:transform .5s var(--spring),box-shadow .35s ease,background-color .3s ease,color .3s ease,opacity .25s,border-color .3s}
+button:active{transform:scale(.95);transition-duration:.12s}
+@media(hover:hover){.card:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(20,60,90,.15)}button.w:not(:disabled):hover,.sys button:hover,.gbtn:hover,.gacc:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(20,60,90,.18)}.chip:hover{border-color:var(--pri);transform:translateY(-1px)}nav button:hover{color:var(--pri)}}
+.rip{position:absolute;border-radius:50%;background:currentColor;opacity:.22;transform:scale(0);animation:rp .65s var(--ease) forwards;pointer-events:none}@keyframes rp{to{transform:scale(1);opacity:0}}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--pri) 20%,transparent)}
+.comp:focus-within{border-color:var(--pri);box-shadow:0 0 0 4px color-mix(in srgb,var(--pri) 18%,transparent)}
+.chip{transition:transform .35s var(--spring),border-color .3s,background-color .3s}
+nav{position:relative;animation:navin .7s var(--ease) backwards}@keyframes navin{from{transform:translateY(100%)}}
+nav .ind{position:absolute;top:0;left:0;width:20%;height:3px;transition:transform .55s var(--spring);pointer-events:none}
+nav .ind::after{content:"";display:block;width:34px;height:3px;margin:0 auto;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--pri),var(--pri2))}
+nav button{transition:color .3s ease,transform .12s}nav button b{transition:transform .5s var(--spring)}
+#v{transition:opacity .3s var(--ease),transform .3s var(--ease)}#v.lv{opacity:0;transform:translateY(-10px)}
+@keyframes up{from{transform:translateY(40%);opacity:0}}
+#sh{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#sh.on{animation:fi .4s ease both}#sh.out{animation:fo .3s ease forwards}#sh .in.up{animation:up .6s var(--ease)}#sh.out .in{animation:dn .3s var(--ease) forwards}
+@keyframes pop{from{opacity:0;transform:scale(.8) translateY(-8px)}}
+#mn{animation:pop .4s var(--spring) both}#mw.out #mn{animation:popo .22s var(--ease) forwards}
+#toast{transform:translate(-50%,18px) scale(.94);transition:opacity .35s var(--ease),transform .5s var(--spring);box-shadow:0 10px 30px rgba(0,0,0,.25)}#toast.on{transform:translate(-50%,0) scale(1)}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+::view-transition-group(page){animation-duration:.6s;animation-timing-function:var(--ease)}
+::view-transition-old(page){animation:vo .4s var(--ease) both}::view-transition-new(page){animation:vn .6s var(--ease) both}
+@keyframes vo{to{opacity:0;transform:translateX(calc(var(--dx,-1)*36px)) scale(.98)}}@keyframes vn{from{opacity:0;transform:translateX(calc(var(--dx,-1)*-36px)) scale(.985)}}
+::view-transition-group(nav){animation:none}::view-transition-old(nav){display:none}::view-transition-new(nav){animation:none}
+.seg.p{position:relative;isolation:isolate;--pd:4px}.seg.s{--pd:3px}
+.seg.p .pill{position:absolute;z-index:-1;top:var(--pd);bottom:var(--pd);left:var(--pd);width:calc((100% - 2*var(--pd))/var(--n));border-radius:11px;background:var(--card);box-shadow:var(--sh);transform:translateX(calc(var(--i)*100%));transition:transform .55s var(--spring)}
+.seg.p button{background:none!important;box-shadow:none!important}.seg.p button.on{color:var(--tx)}
+.gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:#fff!important;color:#3c4043!important;border:1px solid #dadce0;border-radius:26px;padding:12px;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+#gr{display:flex;justify-content:center}
+.or{display:flex;align-items:center;gap:12px;color:var(--mut);font-size:13px;margin:14px 0}.or::before,.or::after{content:"";flex:1;height:1px;background:var(--bd)}
+.pw{position:relative}.pw input{padding-right:48px}.eye{position:absolute;right:6px;top:50%;margin-top:-18px;height:36px;background:none;color:var(--mut);padding:0 10px;font-size:16px;border-radius:10px}
+.rls{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.rl{font-size:12px;padding:4px 10px;border-radius:14px;background:var(--bg);border:1px solid var(--bd);color:var(--mut);transition:all .4s var(--ease)}.rl::before{content:"○ "}.rl.ok{background:var(--sel);border-color:var(--pri2);color:var(--pri);transform:scale(1.05)}.rl.ok::before{content:"✓ "}
+.str{height:6px;border-radius:4px;background:var(--bd);margin-top:10px;overflow:hidden}.str i{display:block;height:100%;width:0;border-radius:4px;background:linear-gradient(90deg,#e5484d,#f5a524,var(--pri2));transition:width .6s var(--ease)}
+.gacc{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--card);color:var(--tx);border:1px solid var(--bd);margin-top:8px;border-radius:14px;padding:10px 12px}
+.gav{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);display:grid;place-items:center;font-weight:700;flex:none}
+@keyframes shk{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}.shake{animation:shk .45s ease}
+#af{transition:opacity .22s ease,transform .3s var(--ease)}#af.fo{opacity:0;transform:translateY(8px)}
+</style></head><body>
+<div id="app"><header><div class="logo">Carb<span>-Ai</span></div><div class="hb" id="hb"></div></header>
+<main id="v"></main><nav id="nv"></nav></div>
+<div id="mw"></div><div id="sh"></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),LS=localStorage;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rnd=n=>Math.round(n*10)/10;
+/* ---------- standalone AI + download layer ---------- */
+(function(){if(window.claude)return;window.__sa=1;
+const KEY=()=>{try{return LS.cai_key||""}catch(e){return""}};
+const b64=f=>new Promise((ok,no)=>{const i=new Image;i.onload=()=>{const r=Math.min(1,1400/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=Math.round(i.width*r);c.height=Math.round(i.height*r);c.getContext("2d").drawImage(i,0,0,c.width,c.height);ok(c.toDataURL("image/jpeg",.82).split(",")[1])};i.onerror=no;i.src=URL.createObjectURL(f)});
+async function call(messages){const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"content-type":"application/json","x-api-key":KEY(),"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-sonnet-5-5",max_tokens:1500,messages})});
+const j=await r.json();if(!r.ok)throw new Error((j.error&&j.error.message)||"API error "+r.status);return j.content.map(c=>c.text||"").join("")}
+function demoJson(p){const m=/round (\d) of 3/.exec(p);if(m&&m[1]=="1")return{status:"need_more",ask:["Demo mode: could you add a photo from the side, and tell me what sauce or oil was used?"]};
+return{status:"done",items:[{name:"Rice",carbs_g:45},{name:"Curry sauce",carbs_g:8}],total_carbs:53,confidence:"low",note:"Demo mode sample result. Add an API key (top-right menu, AI connection) for real photo analysis."}}
+const sm=async(input,o={})=>{const msgs=typeof input=="string"?[{role:"user",content:input}]:input;
+let text;if(!KEY()){const q=(msgs[msgs.length-1].content||"").toLowerCase();text=/icr|ratio/.test(q)?"ICR means 1 unit of insulin covers that many grams of carbs. (Demo mode: add an API key for full answers.)":"I'm in demo mode right now. Add an API key from the top-right menu (AI connection) and I can answer properly."}else text=await call(msgs);
+if(o.onText)o.onText({text,delta:text});return{text}};
+sm.limits=async()=>({images:true});
+sm.json=async(prompt,o={})=>{if(!KEY())return demoJson(prompt);const im=await Promise.all((o.images||[]).map(b64));
+const t=await call([{role:"user",content:[...im.map(d=>({type:"image",source:{type:"base64",media_type:"image/jpeg",data:d}})),{type:"text",text:prompt}]}]);
+const a=t.indexOf("{"),z=t.lastIndexOf("}");return JSON.parse(t.slice(a,z+1))};
+const dl={save:async({filename,data})=>{const u=URL.createObjectURL(data),a=document.createElement("a");a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}};
+window.claude={use:async n=>n=="sample"?sm:n=="downloads"?dl:null};
+})();
+function akey(){const k=prompt("Paste your Anthropic API key to turn on live AI. It is saved only in this browser. Leave empty for demo mode.",LS.cai_key||"");if(k===null)return;try{LS.cai_key=k.trim()}catch(e){}cm();toast(k.trim()?"✓ Live AI connected":"Demo mode on")}
+const THEMES=[["bl","Clinical Blue","#1b7fb5","#2bb3a0",0,"#eef6fa"],["em","Soft Emerald","#1f9d6b","#5cc08a",0,"#eef7f1"],["sa","Warm Sand","#b8793a","#d9a066",0,"#f7f1e8"],["mid","Midnight","#7c8cff","#46d6c4",1,"#070b1a"],["fn","Forest Night","#3fcf8e","#9be37a",1,"#0a1713"],["ld","Lavender Dusk","#a98bf0","#e08fd0",1,"#120d1f"]];
+const isD=t=>(THEMES.find(x=>x[0]==t)||[])[4]==1;
+let pref={th:matchMedia("(prefers-color-scheme:dark)").matches?"mid":"bl",l:"bl",d:"mid",m:"light"};
+try{Object.assign(pref,JSON.parse(LS.cai_pref||"{}"))}catch(e){}
+function ap(a){const r=document.documentElement;if(!THEMES.some(x=>x[0]==pref.th))pref.th="bl";const dk=isD(pref.th);pref.m=dk?"dark":"light";if(dk)pref.d=pref.th;else pref.l=pref.th;
+if(a){r.classList.add("tr");setTimeout(()=>r.classList.remove("tr"),650)}r.dataset.th=pref.th;r.dataset.m=pref.m;try{LS.cai_pref=JSON.stringify(pref)}catch(e){}}
+ap();
+const IN=2.54,LB=0.45359237,SRC=["USDA FoodData Central","Open Food Facts","Australian Food Composition Database","Nutrition5k","NutriBench","Carbs & Cals","CalorieKing","Cronometer","Diabetes UK carb counting","January Food Benchmark"];
+const BASE=[["Plain rice, 1 cup",45],["Pasta, 1 cup",43],["Bread slice",15],["Banana",27],["Apple",25],["Pizza slice",36],["Burger with bun",40],["French fries, medium",48],["Oatmeal, 1 cup",27],["Milk, 1 cup",12],["Orange juice, 1 cup",26],["Chapati",18]];
+let U={};try{U=JSON.parse(LS.cai_users||"{}")}catch(e){}
+let cur=null,tab="home",mode="in",M={c:"",bg:"",note:""},chat=[],cbusy=false,scan=null,aerr="";
+const sv=()=>{try{LS.cai_users=JSON.stringify(U)}catch(e){}};
+const D=()=>U[cur].d,P=()=>D().p;
+async function hash(p,s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s+p));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2200)}
+/* ---------- auth ---------- */
+const GCID=""; // paste your Google OAuth Web client ID here to enable real Google sign-in
+const PR=[["6+ characters",p=>p.length>=6],["Uppercase letter",p=>/[A-Z]/.test(p)],["Lowercase letter",p=>/[a-z]/.test(p)],["Number",p=>/\d/.test(p)],["Special character",p=>/[^A-Za-z0-9]/.test(p)]];
+const pwOk=p=>PR.every(r=>r[1](p));
+const GL='<svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
+const newD=(n,name)=>({p:{name:name||n,age:"",weight:"",height:"",gender:"",resist:"no",ir:"",sys:"metric",hu:"cm",wu:"kg",icr:"",isf:"",target:"110"},foods:[],hist:[]});
+function af(){const names=Object.keys(U).filter(n=>!U[n].g),last=LS.cai_last&&!(U[LS.cai_last]||{}).g?LS.cai_last:"";
+return`${names.length&&mode=="in"?`<div class="mut" style="margin-top:12px">Accounts on this device:</div><div>${names.map(n=>`<span class="chip" onclick="$('#un').value='${esc(n)}';$('#pw').focus()">👤 ${esc(n)}</span>`).join("")}</div>`:""}
+<label>Username</label><input id="un" autocapitalize="none" autocomplete="username" value="${esc(last)}">
+<label>Password</label><div class="pw"><input id="pw" type="password" autocomplete="${mode=="in"?"current-password":"new-password"}" oninput="pwIn()" onkeydown="if(event.key==='Enter')go()"><button type="button" class="eye" onclick="eye()" aria-label="Show or hide password">👁</button></div>
+${mode=="up"?`<div class="str"><i id="sb"></i></div><div class="rls">${PR.map((r,i)=>`<span class="rl" id="r${i}">${r[0]}</span>`).join("")}</div>`:""}
+<div class="warn" id="ae" style="display:none"></div>
+<button class="w" id="sbm" onclick="go()" ${mode=="up"?"disabled":""}>${mode=="in"?"Sign in":"Create account"}</button>
+<p class="mut" style="margin-bottom:0;font-size:13px">Prototype: accounts are stored on this device only. Passwords are salted and hashed.</p>`}
+function auth(){$("#hb").innerHTML="";const nv=$("#nv");nv.innerHTML="";delete nv.dataset.b;nv.style.display="none";const v=$("#v");v.className="";
+v.innerHTML=`<div class="hero"><h2>Welcome to Carb-Ai</h2><p style="margin:6px 0 0;opacity:.9">Carb counting and bolus estimates for the whole family. Each person gets their own saved profile.</p></div>
+<div class="card"><button class="gbtn" id="gb" onclick="gDemo()">${GL}<span>Continue with Google</span></button><div id="gr"></div><div class="or"><span>or use a username</span></div>
+<div class="seg p" style="--n:2;--i:${mode=="in"?0:1}"><i class="pill"></i><button class="${mode=="in"?"on":""}" onclick="setMode('in')">Sign in</button><button class="${mode=="up"?"on":""}" onclick="setMode('up')">Create account</button></div>
+<div id="af">${af()}</div></div>`;gInit()}
+function setMode(m){if(m==mode)return;mode=m;const sg=document.querySelector(".seg"),i=m=="in"?0:1;sg.style.setProperty("--i",i);sg.querySelectorAll("button").forEach((b,k)=>b.classList.toggle("on",k==i));
+const e=$("#af"),un=($("#un")||{}).value||"";e.classList.add("fo");setTimeout(()=>{e.innerHTML=af();if(un)$("#un").value=un;e.classList.remove("fo")},220)}
+function pwIn(){if(mode!="up")return;const p=$("#pw").value;let n=0;PR.forEach((r,i)=>{const ok=r[1](p);if(ok)n++;$("#r"+i).classList.toggle("ok",ok)});$("#sb").style.width=n/5*100+"%";$("#sbm").disabled=n<5}
+function eye(){const i=$("#pw");i.type=i.type=="password"?"text":"password"}
+function aerr_(m){const e=$("#ae");e.textContent=m;e.style.display="block";e.classList.remove("shake");void e.offsetWidth;e.classList.add("shake")}
+async function go(){const n=$("#un").value.trim().toLowerCase(),p=$("#pw").value;
+if(mode=="up"){if(!/^[a-z0-9._-]{3,24}$/.test(n))return aerr_("Username must be 3-24 characters: letters, numbers, dot, dash or underscore.");if(!pwOk(p))return aerr_("Your password must meet every rule below.");if(U[n])return aerr_("That username is taken.");
+const salt=crypto.randomUUID();U[n]={salt,h:await hash(p,salt),d:newD(n)};sv()}
+else{if(!n||!p)return aerr_("Enter your username and password.");if(U[n]&&U[n].g)return aerr_("This account uses Google. Tap Continue with Google.");if(!U[n]||U[n].h!==await hash(p,U[n].salt))return aerr_("Wrong username or password.")}
+login(n)}
+function login(n){cur=n;LS.cai_last=n;LS.cai_session=n;chat=[];tab=ready()?"home":"prof";shell()}
+function gInit(){if(!GCID)return;const run=()=>{try{google.accounts.id.initialize({client_id:GCID,callback:gCb});const r=$("#gr");google.accounts.id.renderButton(r,{theme:"outline",size:"large",shape:"pill",width:Math.min(340,r.offsetWidth||340),text:"continue_with"});$("#gb").style.display="none"}catch(e){}};
+if(window.google&&google.accounts)run();else{const sc=document.createElement("script");sc.src="https://accounts.google.com/gsi/client";sc.async=true;sc.onload=run;document.head.appendChild(sc)}}
+function gCb(r){try{const j=JSON.parse(decodeURIComponent(escape(atob(r.credential.split(".")[1].replace(/-/g,"+").replace(/_/g,"/")))));gLogin((j.email||"").toLowerCase(),j.name)}catch(e){toast("Google sign-in failed")}}
+function gLogin(e,name){if(!U[e]){const nm=name||e.split("@")[0];U[e]={g:1,name:nm,d:newD(e,nm)}}else if(name)U[e].name=name;sv();closeS();login(e)}
+function gDemo(){const e=$("#sh"),acc=Object.keys(U).filter(n=>U[n].g);e.classList.add("on");e.classList.remove("out");
+e.innerHTML=`<div class="in up"><div style="text-align:right"><button class="sec" onclick="closeS()">✕</button></div><div class="sb an"><div style="text-align:center">${GL}<h3 style="margin-top:8px">Sign in with Google</h3><p class="mut" style="margin:0 0 6px">Choose an account to continue to Carb-Ai</p></div>
+${acc.map(n=>`<button class="gacc" onclick="gLogin('${esc(n)}')"><span class="gav">${esc((U[n].name||n)[0].toUpperCase())}</span><span><b>${esc(U[n].name||n)}</b><br><small class="mut">${esc(n)}</small></span></button>`).join("")}
+<label>Gmail address</label><input id="ge" type="email" autocomplete="email" placeholder="you@gmail.com" onkeydown="if(event.key==='Enter')gGo()"><label>Name (optional)</label><input id="gn" autocomplete="name">
+<div class="warn" id="gw" style="display:none"></div><button class="w" onclick="gGo()">Continue</button>
+<div class="warn">Prototype demo: no real Google check happens here. Add a Google Client ID to the file to turn on real Google sign-in.</div></div></div>`}
+function gGo(){const m=$("#ge").value.trim().toLowerCase(),w=$("#gw");if(!/^[a-z0-9._%+-]+@(gmail|googlemail)\.com$/.test(m)){w.textContent="Enter a valid Gmail address.";w.style.display="block";w.classList.remove("shake");void w.offsetWidth;w.classList.add("shake");return}gLogin(m,$("#gn").value.trim())}
+document.addEventListener("pointerdown",e=>{const b=e.target.closest&&e.target.closest("button");if(!b||b.disabled||b.classList.contains("swb")||b.classList.contains("tg"))return;const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height)*2,i=document.createElement("i");i.className="rip";i.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(i);setTimeout(()=>i.remove(),650)});
+const ready=()=>P().age&&P().weight&&P().height;
+function out(){try{LS.removeItem("cai_session")}catch(e){}cm();const v=$("#v");v.classList.add("lv");setTimeout(()=>{cur=null;mode="in";auth()},260)}
+/* ---------- shell ---------- */
+function norm(p){p.sys=p.sys||"metric";p.hu=p.hu||"cm";p.wu=p.wu||"kg";if(p.ir==null)p.ir=""}
+function shell(f){norm(P());$("#hb").innerHTML=`<button class="av" onclick="mnu()" aria-label="Menu">${esc(cur[0].toUpperCase())}</button>`;const v=$("#v");$("#nv").style.display="";if(f){v.innerHTML="";pt=tab;render();return}v.classList.add("lv");setTimeout(()=>{v.innerHTML="";pt=tab;render()},240)}
+function sws(d){return`<div class="sw">${THEMES.filter(t=>t[4]==d).map(t=>`<button class="swb ${t[0]==pref.th?"on":""}" style="background:linear-gradient(135deg,${t[5]} 50%,${t[2]} 50%)" title="${t[1]}" aria-label="${t[1]}" onclick="setTh('${t[0]}',event)"></button>`).join("")}</div>`}
+function mh(){const cn=THEMES.find(t=>t[0]==pref.th)[1];return`<div class="mh">Signed in as <b>${esc(cur)}</b></div><div class="ml">Light themes</div>${sws(0)}<div class="ml">Dark themes</div>${sws(1)}<div class="mh" style="padding-top:0">Current: <b>${cn}</b></div>
+<button class="mr" onclick="tgM(event)"><span>${pref.m=="dark"?"🌙 Dark mode":"☀️ Light mode"}</span><i class="tg ${pref.m=="dark"?"on":""}"></i></button>${window.__sa?`<button class="mr" onclick="akey()">🔑 AI connection · ${LS.cai_key?"live":"demo"}</button>`:""}<button class="mr" onclick="cm();tab='prof';render()">✏️ Edit profile</button><button class="mr" onclick="out()">↪ Log out</button>`}
+function mnu(){const w=$("#mw");if(w.classList.contains("on"))return cm();w.innerHTML=`<div id="mb" onclick="cm()"></div><div id="mn">${mh()}</div>`;w.className="on"}
+function cm(){const w=$("#mw");if(!w||!w.classList.contains("on"))return;w.classList.add("out");setTimeout(()=>{w.className=""},230)}
+function mr(){const n=$("#mn");if(n)n.innerHTML=mh()}
+const TABS=[["home","🍽️","Meal"],["foods","⭐","Foods"],["chat","💬","Assistant"],["hist","🕘","History"],["prof","👤","Profile"]];let pt="home";
+const RM=()=>matchMedia("(prefers-reduced-motion:reduce)").matches;
+function swT(fn,ev){if(document.startViewTransition&&!RM()){const el=ev&&(ev.currentTarget||ev.target),r=el&&el.getBoundingClientRect?el.getBoundingClientRect():{left:innerWidth-40,top:30,width:0,height:0},x=r.left+r.width/2,y=r.top+r.height/2,R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+const t=document.startViewTransition(()=>{fn(0)});t.ready.then(()=>{document.documentElement.animate({clipPath:[`circle(0px at ${x}px ${y}px)`,`circle(${R}px at ${x}px ${y}px)`]},{duration:750,easing:"cubic-bezier(.22,1,.36,1)",pseudoElement:"::view-transition-new(root)"})}).catch(()=>{})}else fn(1)}
+function setTh(t,ev){swT(a=>{pref.th=t;ap(a);mr()},ev)}
+function tgM(ev){swT(a=>{pref.th=isD(pref.th)?pref.l:pref.d;ap(a);mr()},ev)}
+function nvd(){const nv=$("#nv");if(!nv.dataset.b){nv.dataset.b=1;nv.innerHTML=`<i class="ind"></i>`+TABS.map(x=>`<button data-t="${x[0]}" onclick="tab='${x[0]}';render()"><b>${x[1]}</b>${x[2]}</button>`).join("")}
+nv.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.t==tab));nv.querySelector(".ind").style.transform=`translateX(${TABS.findIndex(x=>x[0]==tab)*100}%)`}
+function draw(na){const v=$("#v");v.className=(tab=="chat"?"cm":"")+(na?" na":"");v.innerHTML={home,foods,chat:chatV,hist,prof}[tab]();v.scrollTop=0;if(tab=="chat")rc();if(tab=="home")rs()}
+function render(){nvd();const v=$("#v"),nv=$("#nv"),d=TABS.findIndex(x=>x[0]==tab)-TABS.findIndex(x=>x[0]==pt);pt=tab;
+if(!v.innerHTML.trim()){draw();return}if(d===0){draw(1);return}
+if(document.startViewTransition&&!RM()){document.documentElement.style.setProperty("--dx",d>0?-1:1);v.style.viewTransitionName="page";nv.style.viewTransitionName="nav";const t=document.startViewTransition(()=>{draw()});t.finished.finally(()=>{v.style.viewTransitionName="";nv.style.viewTransitionName=""});return}
+v.classList.add("lv");setTimeout(()=>{draw();requestAnimationFrame(()=>v.classList.remove("lv"))},200)}
+/* ---------- dose ---------- */
+function params(){const w=+P().weight,a=+P().age,ir=+P().ir;let mult=1;
+if(P().resist=="yes"&&ir>0)mult=rnd(1+Math.min(.5,Math.max(0,ir-1.5)*.1));
+const tdd=rnd(w*(a<13?.7:a<19?.8:.5)*mult);return{tdd,mult,icr:+P().icr||Math.max(3,rnd(500/tdd)),isf:+P().isf||Math.max(10,Math.round(1800/tdd))}}
+function dose(c,bg){const p=params(),tg=+P().target||110,m=c/p.icr,k=bg&&+bg>tg?(bg-tg)/p.isf:0;return{m,k,t:rnd(m+k),p}}
+function summ(){const p=P(),cm=+p.height,kg=+p.weight,ti=cm/IN,ft=Math.floor(ti/12);
+const h=p.hu=="cm"?rnd(cm)+" cm":ft+" ft "+rnd(ti-ft*12)+" in",w=p.wu=="lb"?rnd(kg/LB)+" lbs":rnd(kg)+" kg",ir=p.resist=="yes"?"Yes"+(p.ir?", HOMA-IR "+p.ir:", value needed"):"No";
+return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Your profile</h2><button class="sec" onclick="tab='prof';render()">Edit</button></div><div class="sum" style="margin-top:10px"><div><small>Age</small>${esc(p.age)}</div><div><small>Gender</small>${esc(p.gender||"Not set")}</div><div><small>Height</small>${h}</div><div><small>Weight</small>${w}</div><div style="grid-column:1/3"><small>Insulin resistance</small>${ir}</div></div></div>`}
+function home(){if(!ready())return`<div class="card"><h2>Set up first 👋</h2><p>Add age, weight and height once. Carb-Ai remembers them.</p><button class="w" onclick="tab='prof';render()">Set up profile</button></div>`;
+const fv=[...D().foods,...BASE].slice(0,6);
+return`<div class="hero"><h2>Hi ${esc(P().name||cur)} 👋</h2><p style="margin:4px 0 0;opacity:.9">What are you eating?</p></div>${summ()}
+<div class="card"><button class="w" style="margin-top:0" onclick="openScan()">📷 Scan meal with AI</button>
+<div class="mut" style="margin-top:10px">Or tap a usual food:</div>${fv.map(f=>`<span class="chip" onclick="addC(${f[1]})">${esc(f[0])} · ${f[1]}g</span>`).join("")}
+<div class="row"><div><label>Carbs (g)</label><input id="cbi" type="number" inputmode="decimal" value="${M.c}" oninput="M.c=this.value;rs()"></div><div><label>Glucose (mg/dL, optional)</label><input type="number" inputmode="decimal" value="${M.bg}" oninput="M.bg=this.value;rs()"></div></div></div>
+<div id="rs"></div>`}
+function addC(c){M.c=rnd((+M.c||0)+c);const i=$("#cbi");if(i){i.value=M.c;rs()}toast("+"+c+" g added")}
+function tw(el,to,dec){cancelAnimationFrame(el._r);const f0=parseFloat(el.textContent)||0,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/600),e=1-Math.pow(1-k,3);el.textContent=(f0+(to-f0)*e).toFixed(dec);if(k<1)el._r=requestAnimationFrame(f)})(t0)}
+function rs(){const e=$("#rs");if(!e)return;if(M.c===""||+M.c<0){e.innerHTML=`<div class="card mut" style="text-align:center">Add carbs or scan a meal to see your estimate.</div>`;return}
+const d=dose(+M.c,M.bg);if(!$("#rc1"))e.innerHTML=`<div class="card"><div class="pair"><div><small>Estimated Carbohydrates</small><div class="n" id="rc1">0</div><small>grams</small></div><div><small>Estimated Bolus Insulin Dose</small><div class="n" style="color:var(--pri2)" id="rc2">0.0</div><small>UNITS</small></div></div>
+<p class="mut" id="rdet" style="text-align:center;margin:10px 0 0;font-size:13px"></p><div id="rx"></div>
+<div class="warn" style="font-weight:600">This is an approximation only. Always consult your doctor or diabetes educator before taking insulin.</div>
+<div class="row"><button class="w sec" onclick="logIt()">Save meal</button><button class="w" onclick="toast('Demo: dose would be sent to a paired pump after confirmation')">Send to pump</button></div></div>`;
+tw($("#rc1"),+M.c,0);tw($("#rc2"),d.t,1);
+$("#rdet").textContent=`Meal ${rnd(d.m)} U${d.k?` + correction ${rnd(d.k)} U`:""} · TDD ${d.p.tdd} U · ICR 1:${d.p.icr} · ISF ${d.p.isf}${d.p.mult>1?` · resistance ×${d.p.mult}`:""}`;
+$("#rx").innerHTML=P().resist=="yes"&&!(+P().ir>0)?`<div class="warn">Add your HOMA-IR value in your profile so resistance can be factored in.</div>`:""}
+function logIt(){const d=dose(+M.c,M.bg);D().hist.unshift({t:new Date().toLocaleString(),c:rnd(+M.c),u:d.t,n:M.note||"Meal"});sv();M={c:"",bg:"",note:""};toast("Saved to history");tab="hist";render()}
+/* ---------- foods ---------- */
+function foods(){const my=D().foods;return`<div class="card"><h2>Not sure what's in it?</h2><p class="mut" style="margin-top:0">Take photos and Carb-Ai will estimate the carbs, ask for extra angles or details if needed, and save the food for next time.</p><button class="w" style="margin-top:0" onclick="openScan('foods')">📷 Scan an unknown food</button></div>
+<div class="card"><h2>My foods</h2>${my.length?my.map((f,i)=>`<div class="food"><div>${esc(f[0])}<span class="badge">AI</span><br><small class="mut">${f[1]} g carbs</small></div><div><button class="sec" onclick="del(${i})">🗑</button> <button onclick="addC(${f[1]});tab='home';render()">Use</button></div></div>`).join(""):`<p class="mut">Foods you scan appear here.</p>`}</div>
+<div class="card"><h2>Common foods</h2>${BASE.map(f=>`<div class="food"><div>${f[0]}<br><small class="mut">${f[1]} g carbs</small></div><button onclick="addC(${f[1]});tab='home';render()">Use</button></div>`).join("")}</div>${srcCard()}`}
+function srcCard(){return`<div class="card"><h2>How estimates are made</h2><p class="mut" style="margin-top:0">Photo estimates are guided by these nutrition references. This prototype does not query them live.</p>${SRC.map(x=>`<span class="chip" style="cursor:default">${x}</span>`).join("")}<p class="mut" style="font-size:13px;margin-bottom:0">Dosing uses TDD, ICR (500 rule), ISF (1800 rule) and an optional HOMA-IR scaling. Educational formulas, not medical advice.</p></div>`}
+function del(i){D().foods.splice(i,1);sv();render()}
+/* ---------- scan sheet ---------- */
+function openScan(t){scan={t:t||"home",files:[],urls:[],det:"",st:"in",rd:0,ask:[],ans:"",items:[],tot:"",name:"",err:"",note:""};sheet()}
+function closeS(){const e=$("#sh"),sc=scan;e.classList.add("out");setTimeout(()=>{e.classList.remove("on","out");if(scan===sc)scan=null},320)}
+function addPh(i){for(const f of i.files){scan.files.push(f);scan.urls.push(URL.createObjectURL(f))}sheet()}
+function sheet(){const s=scan,e=$("#sh"),first=!e.classList.contains("on");e.classList.add("on");e.classList.remove("out");let b="";
+const ph=`<input type="file" id="pf" accept="image/*" multiple hidden onchange="addPh(this)"><div class="th">${s.urls.map(u=>`<img src="${u}">`).join("")}</div><button class="sec w" onclick="$('#pf').click()">📷 ${s.files.length?"Add another angle":"Take or choose photos"}</button>`;
+if(s.st=="in")b=`<h3>Scan your food</h3><p class="mut" style="margin-top:0">Best results: one photo from above, one from the side, with a fork, coin or hand beside it for size.</p>${ph}
+<label>Details (ingredients, portion size, restaurant, sauces, oil)</label><textarea rows="3" oninput="scan.det=this.value">${esc(s.det)}</textarea>${s.err?`<div class="warn">${esc(s.err)}</div>`:""}<button class="w" ${s.files.length?"":"disabled"} onclick="analyze()">Analyze with AI</button>`;
+else if(s.st=="busy")b=`<div style="text-align:center;padding:18px 0"><div class="pulse">🍽️</div><p style="margin:10px 0 4px"><b>Analyzing your meal</b></p><p class="mut" style="margin:0 0 14px">Identifying foods, portion size and hidden carbs…</p><div class="bar"><i></i></div></div>`;
+else if(s.st=="ask")b=`<h3>A little more info, please</h3>${s.ask.map(a=>`<div class="m" style="max-width:100%;margin-bottom:6px">${esc(a)}</div>`).join("")}${ph}<label>Your answer</label><textarea rows="3" oninput="scan.ans=this.value">${esc(s.ans)}</textarea><button class="w" onclick="analyze()">Send and re-analyze</button>`;
+else if(s.st=="cant")b=`<h3>Can't estimate yet</h3><p>${esc(s.note||"The photos and details aren't enough for a reliable number.")}</p>${ph}<label>More details</label><textarea rows="3" oninput="scan.ans=this.value"></textarea><button class="w" onclick="scan.rd=0;analyze()">Try again</button>`;
+else b=`<h3>Estimated carbs</h3>${s.items.map(i=>`<div class="food"><span>${esc(i.n)}</span><b>${i.c} g</b></div>`).join("")}<label>Total carbs (g), edit if you know better</label><input type="number" value="${s.tot}" oninput="scan.tot=this.value"><label>Name to save</label><input value="${esc(s.name)}" oninput="scan.name=this.value">${s.note?`<p class="mut">${esc(s.note)}</p>`:""}
+<div class="row"><button class="w sec" onclick="saveF()">⭐ Save to my foods</button><button class="w" onclick="useS()">Use in meal</button></div><div class="warn">Estimate only. Portions and hidden ingredients change the real number.</div>`;
+const ch=s.last!=s.st;s.last=s.st;e.innerHTML=`<div class="in${first?" up":""}"><div style="text-align:right"><button class="sec" onclick="closeS()">✕</button></div><div class="sb${ch?" an":""}">${b}</div></div>`}
+async function analyze(){const s=scan;if(s.ans){s.det+="\nUser answer: "+s.ans;s.ans=""}const prev=s.st;s.st="busy";sheet();s.err="";
+try{const sm=await claude.use("sample");if(!sm)throw"x";const lim=await sm.limits();if(!lim.images)throw"x";s.rd++;
+const r=await sm.json(`You estimate carbohydrates in food from photos for a person with type 1 diabetes. Calibrate against reference nutrition data from USDA FoodData Central, Open Food Facts, the Australian Food Composition Database, Nutrition5k, NutriBench, Carbs & Cals, CalorieKing and Diabetes UK carb-counting guidance, and take care with cooked vs raw weights and portion depth. This is analysis round ${s.rd} of 3. User details so far: ${s.det||"none"}.
+Rules: never invent numbers. If key info is missing (another angle, portion size or a size reference, ingredients, sauces, oil, preparation), return status "need_more" with 1-3 short, specific requests in "ask" (only allowed when round is below 3). Otherwise return status "done" with each item and carbs_g. If you truly cannot estimate, status "done" with total_carbs null and explain in note.
+Reply ONLY with JSON: {"status":"need_more"|"done","ask":[string],"items":[{"name":string,"carbs_g":number}],"total_carbs":number|null,"confidence":"low"|"medium"|"high","note":string}`,{images:s.files,cache:false,modelTier:"complex"});
+if(r.status=="need_more"&&s.rd<3&&r.ask&&r.ask.length){s.ask=r.ask;s.st="ask"}
+else if(r.total_carbs==null){s.note=r.note;s.st="cant"}
+else{s.items=(r.items||[]).map(i=>({n:i.name,c:rnd(+i.carbs_g||0)}));s.tot=rnd(+r.total_carbs);s.name=s.items.map(i=>i.n).join(", ").slice(0,40);s.note=(r.confidence?"Confidence: "+r.confidence+". ":"")+(r.note||"");s.st="done";toast("✓ Analysis complete")}}
+catch(e){s.st=prev=="busy"?"in":prev;s.err="Photo analysis failed: "+((e&&e.message)||"please try again")+".";s.rd=Math.max(0,s.rd-1)}
+sheet()}
+function saveF(){if(!(+scan.tot>=0)||!scan.name.trim())return toast("Add a name and carbs");D().foods.unshift([scan.name.trim(),rnd(+scan.tot)]);sv();closeS();toast("Saved to My foods");if(tab=="foods")render()}
+function useS(){M.c=rnd(+scan.tot);M.note=scan.name;closeS();tab="home";render()}
+/* ---------- chat ---------- */
+const bi=m=>m.content?esc(m.content).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\n/g,"<br>"):'<span class="dots"><span></span><span></span><span></span></span>';
+const bub=(m,n)=>`<div class="m ${m.role=="user"?"u":""}${n?" nw":""}">${bi(m)}</div>`;
+function chatV(){return`<div class="chatv"><div id="msgs"></div><div id="qp"></div><div class="comp"><textarea id="ci" rows="1" placeholder="Ask about carbs, doses, foods…" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}"></textarea><button onclick="send()" aria-label="Send">➤</button></div></div>`}
+function rc(nw){const m=$("#msgs");if(!m)return;m.innerHTML=`<div class="m">Hi ${esc(P().name||cur)}! I'm your Carb-Ai assistant. Ask me about carbs, ICR and ISF, or how a dose was worked out.</div>`+chat.map((x,i)=>bub(x,nw&&i>=chat.length-2)).join("");m.scrollTop=m.scrollHeight;
+$("#qp").innerHTML=chat.length?"":["How many carbs in a samosa?","Explain my dose","What is ICR?","Tips for restaurant meals"].map(q=>`<span class="chip" onclick="send('${q}')">${q}</span>`).join("")}
+async function send(q){const i=$("#ci");const t=(q||(i&&i.value)||"").trim();if(!t||cbusy)return;if(i)i.value="";cbusy=true;chat.push({role:"user",content:t},{role:"assistant",content:""});rc(1);
+try{const sm=await claude.use("sample");if(!sm)throw"x";const h=chat.slice(0,-1).map(m=>({role:m.role,content:m.content}));
+const p=ready()?`Age ${P().age}, ${P().weight} kg, insulin resistance: ${P().resist}. App settings ICR 1:${params().icr}, ISF ${params().isf}.`:"Profile not set up yet.";
+h[0].content="You are the assistant inside Carb-Ai, a prototype app for people with type 1 diabetes. Be warm, short and clear. Help with carb estimates, food questions and how the app's bolus formula works (units = carbs/ICR + (glucose-target)/ISF). Never tell the user to take a specific insulin dose yourself; say the app gives an estimate and they must confirm with their doctor or diabetes educator. Patient: "+p+"\n\nUser: "+h[0].content;
+const r=await sm(h,{cache:false,modelTier:"quick",onText:e=>{chat[chat.length-1].content=e.text;const m=$("#msgs");if(m){m.lastElementChild.innerHTML=bi(chat[chat.length-1]);m.scrollTop=m.scrollHeight}}});chat[chat.length-1].content=r.text}
+catch(e){chat[chat.length-1].content="Sorry, I couldn't reach the AI: "+((e&&e.message)||"please try again")+"."}
+cbusy=false;{const m=$("#msgs");if(tab=="chat"&&m&&m.lastElementChild)m.lastElementChild.innerHTML=bi(chat[chat.length-1])}}
+/* ---------- history & profile ---------- */
+function hist(){const h=D().hist;return`<div class="card"><h2>Meal history</h2>${h.length?h.map(x=>`<div class="hist"><b>${esc(x.n)}</b>: ${x.c} g carbs, ${x.u} U<br><small class="mut">${esc(x.t)}</small></div>`).join("")+`<button class="w sec" onclick="dl()">⬇ Download CSV</button>`:`<p class="mut">No meals saved yet.</p>`}</div>`}
+async function dl(){try{const d=await claude.use("downloads");if(!d)return toast("Download unavailable");const r=["time,meal,carbs_g,units",...D().hist.map(h=>[h.t,h.n,h.c,h.u].map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(","))];await d.save({filename:"carb-ai-history.csv",data:new Blob([r.join("\n")],{type:"text/csv"})})}catch(e){}}
+const seg=(k,o,v)=>`<div class="seg s p" style="--n:${o.length};--i:${Math.max(0,o.findIndex(x=>x[0]==v))}"><i class="pill"></i>${o.map(x=>`<button class="${x[0]==v?"on":""}" onclick="setU('${k}','${x[0]}',this)">${x[1]}</button>`).join("")}</div>`;
+const bdg=on=>on?`<span class="badge">custom unit</span>`:"";
+function ms(){const p=P(),dh=p.sys=="imperial"?"ftin":"cm",dw=p.sys=="imperial"?"lb":"kg",cm=+p.height||0,kg=+p.weight||0,ti=cm/IN,ft=cm?Math.floor(ti/12):"",inch=cm?rnd(ti-ft*12):"";
+return`<div class="lh"><label>Height ${bdg(p.hu!=dh)}</label>${seg("hu",[["cm","cm"],["ftin","ft + in"]],p.hu)}</div>
+${p.hu=="cm"?`<input type="number" inputmode="decimal" value="${cm?rnd(cm):""}" placeholder="e.g. 165" oninput="setH(this.value)" style="margin-top:6px">`:`<div class="row" style="margin-top:6px"><input id="hf" type="number" inputmode="numeric" value="${ft}" placeholder="feet" oninput="setHI()"><input id="hi" type="number" inputmode="decimal" value="${inch}" placeholder="inches" oninput="setHI()"></div>`}
+<div class="lh"><label>Weight ${bdg(p.wu!=dw)}</label>${seg("wu",[["kg","kg"],["lb","lbs"]],p.wu)}</div>
+<input type="number" inputmode="decimal" value="${kg?(p.wu=="lb"?rnd(kg/LB):rnd(kg)):""}" placeholder="${p.wu=="lb"?"e.g. 130":"e.g. 60"}" oninput="setW(this.value)" style="margin-top:6px">`}
+function swap(){const e=$("#ms");if(!e)return;e.style.height=e.offsetHeight+"px";e.classList.add("fo");setTimeout(()=>{e.innerHTML=ms();e.classList.remove("fo");e.style.height=e.scrollHeight+"px";setTimeout(()=>e.style.height="",380)},170)}
+function setSys(x){const p=P();p.sys=x;p.hu=x=="imperial"?"ftin":"cm";p.wu=x=="imperial"?"lb":"kg";sv();document.querySelectorAll(".sys button").forEach(b=>b.classList.toggle("on",b.dataset.s==x));swap()}
+function setU(k,v,b){P()[k]=v;sv();if(b){const q=[...b.parentNode.querySelectorAll("button")];q.forEach(x=>x.classList.toggle("on",x===b));b.parentNode.style.setProperty("--i",q.indexOf(b))}if(k=="resist")$("#irw").classList.toggle("on",v=="yes");else swap()}
+function setH(v){P().height=+v>0?+v:"";sv()}
+function setHI(){const f=+$("#hf").value||0,i=+$("#hi").value||0;P().height=f||i?Math.round((f*12+i)*IN*100)/100:"";sv()}
+function setW(v){P().weight=+v>0?(P().wu=="lb"?+v*LB:+v):"";sv()}
+function saveP(){if(!ready())return toast("Add age, height and weight first");sv();tab="home";render();toast("✓ Profile saved")}
+function prof(){const p=P();norm(p);const f=(k,l,t="number")=>`<label>${l}</label><input type="${t}" value="${esc(p[k])}" oninput="P().${k}=this.value;sv()">`;
+return`<div class="card"><h2>Choose your measurement system</h2><div class="sys">${[["metric","Metric","cm · kg"],["imperial","Imperial","ft + in · lbs"]].map(x=>`<button data-s="${x[0]}" class="${p.sys==x[0]?"on":""}" onclick="setSys('${x[0]}')"><b>${x[1]}</b><br><small>${x[2]}</small><i class="ck">✓</i></button>`).join("")}</div><p class="mut" style="margin:10px 0 0;font-size:13px">You can still switch height or weight to any unit below.</p></div>
+<div class="card"><h2>About ${esc(cur)}</h2>${f("name","Display name","text")}<div class="row"><div>${f("age","Age")}</div><div><label>Gender</label><select onchange="P().gender=this.value;sv()">${["","Female","Male","Other"].map(g=>`<option ${p.gender==g?"selected":""}>${g}</option>`).join("")}</select></div></div>
+<div id="ms">${ms()}</div>
+<div class="lh"><label>Insulin resistance <button class="ib" onclick="$('#irt').classList.toggle('on')">i</button></label>${seg("resist",[["no","No"],["yes","Yes"]],p.resist)}</div>
+<div class="col" id="irt"><div><div class="warn" style="margin:8px 0 0">When the body responds poorly to insulin, the same dose lowers glucose less than expected, so doses can need to be larger. A HOMA-IR number lets Carb-Ai scale your estimate.</div></div></div>
+<div class="col ${p.resist=="yes"?"on":""}" id="irw"><div><label>HOMA-IR value</label><input type="number" step="0.1" inputmode="decimal" value="${esc(p.ir)}" placeholder="e.g. 3.2" oninput="P().ir=this.value;sv()"><p class="mut" style="margin:6px 0 0;font-size:13px">HOMA-IR = fasting glucose (mg/dL) × fasting insulin (µU/mL) ÷ 405. Under about 2.0 is typical; above 2.5 suggests resistance.</p></div></div></div>
+<div class="card"><h2>Pump settings (optional)</h2><p class="mut" style="margin-top:0">Leave blank to use estimates. Values entered here override the formulas.</p><div class="row"><div>${f("icr","ICR (g per unit)")}</div><div>${f("isf","ISF (mg/dL per unit)")}</div></div>${f("target","Target glucose (mg/dL)")}
+<button class="w" onclick="saveP()">Save and continue</button></div>`}
+const ss=LS.cai_session;if(ss&&U[ss]){cur=ss;tab=ready()?"home":"prof";shell(1)}else auth();
+</script></body></html>
