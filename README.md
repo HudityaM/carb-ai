@@ -1,4 +1,4 @@
-# CARB-AI <meta name="google-site-verification" content="b7wZu9MzqoLbx1szt1Jt2RSXD4DDqiEAXgdbr6ggNKw" />
+# CARB-AI 
 
 CARB-AI is an experimental AI project exploring how multimodal artificial intelligence can estimate the carbohydrate content of food using food images and natural-language descriptions.
 
