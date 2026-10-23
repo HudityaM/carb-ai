@@ -2,6 +2,9 @@
 <html lang="en"><head>
 <meta name="google-site-verification" content="b7wZu9MzqoLbx1szt1Jt2RSXD4DDqiEAXgdbr6ggNKw" />
 <meta charset="utf-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=3f247e52-f77e-48f4-956a-5fc8bcfdf350
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Carb-Ai</title>
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Carb-Ai"><meta name="theme-color" content="#1b7fb5">
@@ -179,6 +182,55 @@ nav button.on b{animation:bounce .45s cubic-bezier(.3,1.6,.5,1)}@keyframes bounc
 .fu{border:1.5px solid var(--pri2);animation:in .5s both,glow 2.4s ease-in-out infinite}@keyframes glow{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--pri2) 18%,transparent)}}
 .cta{font-size:17px;padding:16px!important;box-shadow:0 8px 22px color-mix(in srgb,var(--pri) 35%,transparent)}
 .emp{padding:12px 0}.emp>div{animation:pop .7s cubic-bezier(.3,1.6,.5,1) both}
+</style><style id="enh3">
+.rh{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mut);margin-top:7px;min-height:18px;transition:color .4s var(--ease)}
+.rh>i{flex:none;font-style:normal;display:grid;place-items:center;width:16px;height:16px;border-radius:50%;font-size:10px;font-weight:700;background:var(--bd);color:var(--tx);transition:background-color .4s var(--ease),color .4s var(--ease)}
+.rh>span{flex:1;min-width:0}
+.rh.ok{color:var(--pri2)}.rh.ok>i{background:var(--pri2);color:#fff}
+.rh.bad{color:#e5484d}.rh.bad>i{background:#e5484d;color:#fff}
+.rt{flex:none;position:relative;width:64px;height:4px;border-radius:4px;background:var(--bd);overflow:visible}
+.rt b{position:absolute;top:50%;left:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));opacity:0;transform:scale(.3);transition:left .6s var(--spring),opacity .3s,transform .45s var(--spring),background .3s}
+.rh.ok .rt b,.rh.bad .rt b{opacity:1;transform:scale(1)}.rh.bad .rt b{background:#e5484d}
+input.bad{border-color:#e5484d!important;box-shadow:0 0 0 4px rgba(229,72,77,.16)!important}
+#v.lx{opacity:0;transform:scale(.94);filter:blur(6px);transition:opacity .45s var(--ease),transform .55s var(--ease),filter .45s var(--ease)}
+#wl{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:24px;color:var(--tx);background:radial-gradient(700px 480px at 50% 42%,color-mix(in srgb,var(--pri) 16%,var(--bg)),var(--bg))}
+#wl .wc{position:relative;width:96px;height:96px;display:grid;place-items:center;margin-bottom:12px}
+#wl .wc b{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);display:grid;place-items:center;font-size:30px;font-weight:800;box-shadow:0 14px 34px color-mix(in srgb,var(--pri) 38%,transparent)}
+#wl svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+#wl circle{fill:none;stroke:var(--pri2);stroke-width:3;stroke-linecap:round;stroke-dasharray:290;stroke-dashoffset:290}
+#wl h2{margin:0;font-size:22px}#wl p{margin:0;color:var(--mut);font-size:14px}
+@media (prefers-reduced-motion:no-preference){
+.rh.fx>span{animation:rhi .4s var(--ease) both}@keyframes rhi{from{opacity:0;transform:translateY(-5px)}}
+.rh.fx>i{animation:rpop .5s var(--spring) both}@keyframes rpop{from{transform:scale(.3) rotate(-90deg)}}
+input.bad.sk{animation:shk .45s ease}
+#wl{animation:fi .45s var(--ease) both}
+#wl .wc{animation:wcp .8s var(--spring) .05s both}@keyframes wcp{from{opacity:0;transform:scale(.55)}}
+#wl circle{animation:ring 1.1s var(--ease) .2s forwards}@keyframes ring{to{stroke-dashoffset:0}}
+#wl h2{animation:wup .65s var(--ease) .28s both}#wl p{animation:wup .65s var(--ease) .4s both}@keyframes wup{from{opacity:0;transform:translateY(12px)}}
+#wl.out{animation:wlo .75s cubic-bezier(.65,0,.35,1) forwards}@keyframes wlo{to{opacity:0;transform:scale(1.08);filter:blur(8px)}}
+#wl.out .wc{animation:wco .6s var(--ease) forwards}@keyframes wco{to{transform:scale(1.35);opacity:0}}
+#app.ent main{animation:ape .9s var(--ease) .1s both}@keyframes ape{from{opacity:0;transform:scale(.96) translateY(10px);filter:blur(5px)}}
+#app.ent header{animation:ahe .8s var(--ease) both}@keyframes ahe{from{opacity:0;transform:translateY(-14px)}}
+#app.ent nav{animation:ane .9s var(--ease) .25s both}@keyframes ane{from{transform:translateY(100%);opacity:0}}
+#app.ent .av{animation:rpop .7s var(--spring) .35s both}
+}
+</style><style id="enh4">
+main{overscroll-behavior:contain;scroll-padding:24px 0 90px;scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--pri) 45%,transparent) transparent}
+main::-webkit-scrollbar{width:6px}main::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--pri) 45%,transparent);border-radius:6px}
+header{position:relative;z-index:3;transition:box-shadow .4s var(--ease),background-color .4s var(--ease)}
+header.sc{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 18px -10px rgba(0,0,0,.35)}
+.gs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gs button{background:var(--bg);color:var(--tx);border:1.5px solid var(--bd);padding:11px 4px;border-radius:12px;font-weight:600;font-size:14px}
+.gs button.on{background:var(--sel);border-color:var(--pri);color:var(--pri)}
+.gs button.on span{display:inline-block;animation:rpop .5s var(--spring)}
+.go{margin-top:8px;padding:12px;border-radius:14px;background:var(--sel);border:1px dashed color-mix(in srgb,var(--pri) 45%,transparent)}
+.go label:first-child{margin-top:0}.go input{background:var(--card,var(--bg))}
+.pv{margin-top:8px;font-size:13px;color:var(--mut);min-height:18px}.pv b{color:var(--pri)}
+@media (prefers-reduced-motion:no-preference){
+.col.on .go>*{animation:wup .5s var(--ease) both}.col.on .go>*:nth-child(2){animation-delay:.06s}.col.on .go>*:nth-child(3){animation-delay:.12s}.col.on .go>*:nth-child(4){animation-delay:.18s}.col.on .go>*:nth-child(5){animation-delay:.24s}
+.pv b{display:inline-block;animation:wup .35s var(--ease)}
+.card.sr{animation:none!important;opacity:0;transform:translateY(26px) scale(.985);transition:opacity .6s var(--ease),transform .7s var(--ease)!important}.card.sr.si{opacity:1;transform:none}
+}
 </style></head><body>
 <div id="app"><header><div class="logo">Carb<span>-Ai</span></div><div class="hb" id="hb"></div></header>
 <main id="v"></main><nav id="nv"></nav></div>
@@ -251,7 +303,11 @@ if(mode=="up"){if(!/^[a-z0-9._-]{3,24}$/.test(n))return aerr_("Username must be 
 const salt=crypto.randomUUID();U[n]={salt,h:await hash(p,salt),d:newD(n)};sv()}
 else{if(!n||!p)return aerr_("Enter your username and password.");if(U[n]&&U[n].g)return aerr_("This account uses Google. Tap Continue with Google.");if(!U[n]||U[n].h!==await hash(p,U[n].salt))return aerr_("Wrong username or password.")}
 login(n)}
-function login(n){cur=n;LS.cai_last=n;LS.cai_session=n;chat=[];tab=ready()?"home":"prof";shell()}
+function login(n){cur=n;LS.cai_last=n;LS.cai_session=n;chat=[];tab=ready()?"home":"prof";if(RM())return shell();welcome()}
+function welcome(){const v=$("#v"),u=U[cur]||{},nm=P().name||u.name||cur,bk=ready()||D().hist.length,w=document.createElement("div");w.id="wl";
+w.innerHTML=`<div class="wc"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/></svg><b>${esc(cur[0].toUpperCase())}</b></div><h2>Welcome${bk?" back":""}, ${esc(nm)}</h2><p>${bk?"Getting your dashboard ready…":"Let's set up your profile…"}</p>`;
+v.classList.add("lx");setTimeout(()=>document.body.appendChild(w),180);
+setTimeout(()=>{const a=$("#app");a.classList.add("ent");shell(1);w.classList.add("out");setTimeout(()=>{w.remove();a.classList.remove("ent")},1200)},1500)}
 function gInit(){if(!GCID)return;const run=()=>{try{google.accounts.id.initialize({client_id:GCID,callback:gCb});const r=$("#gr");google.accounts.id.renderButton(r,{theme:"outline",size:"large",shape:"pill",width:Math.min(340,r.offsetWidth||340),text:"continue_with"});$("#gb").style.display="none"}catch(e){}};
 if(window.google&&google.accounts)run();else{const sc=document.createElement("script");sc.src="https://accounts.google.com/gsi/client";sc.async=true;sc.onload=run;document.head.appendChild(sc)}}
 function gCb(r){try{const j=JSON.parse(decodeURIComponent(escape(atob(r.credential.split(".")[1].replace(/-/g,"+").replace(/_/g,"/")))));gLogin((j.email||"").toLowerCase(),j.name)}catch(e){toast("Google sign-in failed")}}
@@ -283,7 +339,12 @@ function setTh(t,ev){swT(a=>{pref.th=t;ap(a);mr()},ev)}
 function tgM(ev){swT(a=>{pref.th=isD(pref.th)?pref.l:pref.d;ap(a);mr()},ev)}
 function nvd(){const nv=$("#nv");if(!nv.dataset.b){nv.dataset.b=1;nv.innerHTML=`<i class="ind"></i>`+TABS.map(x=>`<button data-t="${x[0]}" onclick="tab='${x[0]}';render()"><b>${x[1]}</b>${x[2]}</button>`).join("")}
 nv.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.t==tab));nv.querySelector(".ind").style.transform=`translateX(${TABS.findIndex(x=>x[0]==tab)*100}%)`}
-function draw(na){const v=$("#v");v.className=(tab=="chat"?"cm":"")+(na?" na":"");v.innerHTML={home,foods,chat:chatV,hist,prof}[tab]();v.scrollTop=0;if(tab=="chat")rc();if(tab=="home")rs()}
+function draw(na){const v=$("#v");v.className=(tab=="chat"?"cm":"")+(na?" na":"");v.innerHTML={home,foods,chat:chatV,hist,prof}[tab]();v.scrollTop=0;if(tab=="chat")rc();if(tab=="home")rs();if(tab=="prof")chkAll();srv()}
+function srv(){const v=$("#v");if(!v||RM()||!window.IntersectionObserver)return;if(srv.o)srv.o.disconnect();const h=v.clientHeight;
+srv.o=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("si");srv.o.unobserve(x.target)}}),{root:v,threshold:.08});
+v.querySelectorAll(".card").forEach(c=>{if(c.offsetTop>h-20){c.classList.add("sr");srv.o.observe(c)}})}
+$("#v").addEventListener("scroll",function(){document.querySelector("header").classList.toggle("sc",this.scrollTop>6)},{passive:true});
+document.addEventListener("focusin",e=>{const t=e.target;if(t.matches&&t.matches("main input,main select")&&matchMedia("(pointer:coarse)").matches)setTimeout(()=>t.scrollIntoView({behavior:"smooth",block:"center"}),300)});
 function render(){nvd();const v=$("#v"),nv=$("#nv"),d=TABS.findIndex(x=>x[0]==tab)-TABS.findIndex(x=>x[0]==pt);pt=tab;
 if(!v.innerHTML.trim()){draw();return}if(d===0){draw(1);return}
 if(document.startViewTransition&&!RM()){document.documentElement.style.setProperty("--dx",d>0?-1:1);v.style.viewTransitionName="page";nv.style.viewTransitionName="nav";const t=document.startViewTransition(()=>{draw()});t.finished.finally(()=>{v.style.viewTransitionName="";nv.style.viewTransitionName=""});return}
@@ -295,7 +356,7 @@ const tdd=rnd(w*(a<13?.7:a<19?.8:.5)*mult);return{tdd,mult,icr:+P().icr||Math.ma
 function dose(c,bg){const p=params(),tg=+P().target||110,m=c/p.icr,k=bg&&+bg>tg?(bg-tg)/p.isf:0;return{m,k,t:rnd(m+k),p}}
 function summ(){const p=P(),cm=+p.height,kg=+p.weight,ti=cm/IN,ft=Math.floor(ti/12);
 const h=p.hu=="cm"?rnd(cm)+" cm":ft+" ft "+rnd(ti-ft*12)+" in",w=p.wu=="lb"?rnd(kg/LB)+" lbs":rnd(kg)+" kg",ir=p.resist=="yes"?"Yes"+(p.ir?", HOMA-IR "+p.ir:", value needed"):"No";
-return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Your profile</h2><button class="sec" onclick="tab='prof';render()">Edit</button></div><div class="sum" style="margin-top:10px"><div><small>Age</small>${esc(p.age)}</div><div><small>Gender</small>${esc(p.gender||"Not set")}</div><div><small>Height</small>${h}</div><div><small>Weight</small>${w}</div><div style="grid-column:1/3"><small>Insulin resistance</small>${ir}</div></div></div>`}
+return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Your profile</h2><button class="sec" onclick="tab='prof';render()">Edit</button></div><div class="sum" style="margin-top:10px"><div><small>Age</small>${esc(p.age)}</div><div><small>Gender</small>${esc(p.gender=="Other"?(p.gid||"Other")+(p.pron?" ("+p.pron+")":""):p.gender||"Not set")}</div><div><small>Height</small>${h}</div><div><small>Weight</small>${w}</div><div style="grid-column:1/3"><small>Insulin resistance</small>${ir}</div></div></div>`}
 function home(){if(!ready())return`<div class="card"><h2>Set up first 👋</h2><p>Add age, weight and height once. Carb-Ai remembers them.</p><button class="w" onclick="tab='prof';render()">Set up profile</button></div>`;
 if(!D().ok)setTimeout(safety,350);const fv=[...D().foods,...BASE].slice(0,6),lm=D().hist[0],pend=D().hist.find(x=>x.tk&&x.af==null&&x.ts&&Date.now()-x.ts>2*36e5);
 return`<div class="hero"><h2>Hi ${esc(P().name||cur)} 👋</h2><p style="margin:4px 0 0;opacity:.9">What are you eating?</p></div>${pend?`<div class="card fu"><h2>How did it go? 🩸</h2><p class="mut" style="margin-top:0">You logged <b>${esc(pend.n)}</b> (${pend.c} g, ${pend.u} U) a while ago. Adding your glucose now helps you and Carb-Ai learn how your body responds.</p><button class="w" style="margin-top:4px" onclick="addAf(${D().hist.indexOf(pend)})">Add glucose reading</button></div>`:""}${summ()}
@@ -368,7 +429,7 @@ function rc(nw){const m=$("#msgs");if(!m)return;m.innerHTML=`<div class="m">Hi $
 $("#qp").innerHTML=chat.length?"":["How many carbs in a samosa?","Explain my dose","What is ICR?","Tips for restaurant meals"].map(q=>`<span class="chip" onclick="send('${q}')">${q}</span>`).join("")}
 async function send(q){const i=$("#ci");const t=(q||(i&&i.value)||"").trim();if(!t||cbusy)return;if(i)i.value="";cbusy=true;chat.push({role:"user",content:t},{role:"assistant",content:""});rc(1);
 try{const sm=await claude.use("sample");if(!sm)throw"x";const h=chat.slice(0,-1).map(m=>({role:m.role,content:m.content}));
-const p=ready()?`Age ${P().age}, ${P().weight} kg, insulin resistance: ${P().resist}. App settings ICR 1:${params().icr}, ISF ${params().isf}.`:"Profile not set up yet.";
+const p=ready()?`Age ${P().age}, ${P().weight} kg, insulin resistance: ${P().resist}.${P().pron?` Pronouns: ${P().pron} (use them when referring to the user).`:""} App settings ICR 1:${params().icr}, ISF ${params().isf}.`:"Profile not set up yet.";
 h[0].content="You are the assistant inside Carb-Ai, a prototype app for people with type 1 diabetes. Be warm, short and clear. Help with carb estimates, food questions and how the app's bolus formula works (units = carbs/ICR + (glucose-target)/ISF). Never tell the user to take a specific insulin dose yourself; say the app gives an estimate and they must confirm with their doctor or diabetes educator. Patient: "+p+"\n\nUser: "+h[0].content;
 const r=await sm(h,{cache:false,modelTier:"quick",onText:e=>{chat[chat.length-1].content=e.text;const m=$("#msgs");if(m){m.lastElementChild.innerHTML=bi(chat[chat.length-1]);m.scrollTop=m.scrollHeight}}});chat[chat.length-1].content=r.text}
 catch(e){chat[chat.length-1].content="Sorry, I couldn't reach the AI: "+((e&&e.message)||"please try again")+"."}
@@ -382,26 +443,52 @@ const seg=(k,o,v)=>`<div class="seg s p" style="--n:${o.length};--i:${Math.max(0
 const bdg=on=>on?`<span class="badge">custom unit</span>`:"";
 function ms(){const p=P(),dh=p.sys=="imperial"?"ftin":"cm",dw=p.sys=="imperial"?"lb":"kg",cm=+p.height||0,kg=+p.weight||0,ti=cm/IN,ft=cm?Math.floor(ti/12):"",inch=cm?rnd(ti-ft*12):"";
 return`<div class="lh"><label>Height ${bdg(p.hu!=dh)}</label>${seg("hu",[["cm","cm"],["ftin","ft + in"]],p.hu)}</div>
-${p.hu=="cm"?`<input type="number" inputmode="decimal" value="${cm?rnd(cm):""}" placeholder="e.g. 165" oninput="setH(this.value)" style="margin-top:6px">`:`<div class="row" style="margin-top:6px"><input id="hf" type="number" inputmode="numeric" value="${ft}" placeholder="feet" oninput="setHI()"><input id="hi" type="number" inputmode="decimal" value="${inch}" placeholder="inches" oninput="setHI()"></div>`}
+${p.hu=="cm"?`<input id="hc" type="number" inputmode="decimal" min="50" max="250" value="${cm?rnd(cm):""}" placeholder="e.g. 165" oninput="setH(this.value);vi('h')" onblur="chk('h',1)" style="margin-top:6px">`:`<div class="row" style="margin-top:6px"><input id="hf" type="number" inputmode="numeric" min="1" max="8" value="${ft}" placeholder="feet" oninput="setHI();vi('h')" onblur="chk('h',1)"><input id="hi" type="number" inputmode="decimal" min="0" max="11.9" value="${inch}" placeholder="inches" oninput="setHI();vi('h')" onblur="chk('h',1)"></div>`}${rh("h")}
 <div class="lh"><label>Weight ${bdg(p.wu!=dw)}</label>${seg("wu",[["kg","kg"],["lb","lbs"]],p.wu)}</div>
-<input type="number" inputmode="decimal" value="${kg?(p.wu=="lb"?rnd(kg/LB):rnd(kg)):""}" placeholder="${p.wu=="lb"?"e.g. 130":"e.g. 60"}" oninput="setW(this.value)" style="margin-top:6px">`}
-function swap(){const e=$("#ms");if(!e)return;e.style.height=e.offsetHeight+"px";e.classList.add("fo");setTimeout(()=>{e.innerHTML=ms();e.classList.remove("fo");e.style.height=e.scrollHeight+"px";setTimeout(()=>e.style.height="",380)},170)}
+<input id="wi" type="number" inputmode="decimal" min="${p.wu=="lb"?44:20}" max="${p.wu=="lb"?660:300}" value="${kg?(p.wu=="lb"?rnd(kg/LB):rnd(kg)):""}" placeholder="${p.wu=="lb"?"e.g. 130":"e.g. 60"}" oninput="setW(this.value);vi('w')" onblur="chk('w',1)" style="margin-top:6px">${rh("w")}`}
+function swap(){const e=$("#ms");if(!e)return;e.style.height=e.offsetHeight+"px";e.classList.add("fo");setTimeout(()=>{e.innerHTML=ms();chk("h",1);chk("w",1);e.classList.remove("fo");e.style.height=e.scrollHeight+"px";setTimeout(()=>e.style.height="",380)},170)}
 function setSys(x){const p=P();p.sys=x;p.hu=x=="imperial"?"ftin":"cm";p.wu=x=="imperial"?"lb":"kg";sv();document.querySelectorAll(".sys button").forEach(b=>b.classList.toggle("on",b.dataset.s==x));swap()}
-function setU(k,v,b){P()[k]=v;sv();if(b){const q=[...b.parentNode.querySelectorAll("button")];q.forEach(x=>x.classList.toggle("on",x===b));b.parentNode.style.setProperty("--i",q.indexOf(b))}if(k=="resist")$("#irw").classList.toggle("on",v=="yes");else swap()}
-function setH(v){P().height=+v>0?+v:"";sv()}
-function setHI(){const f=+$("#hf").value||0,i=+$("#hi").value||0;P().height=f||i?Math.round((f*12+i)*IN*100)/100:"";sv()}
-function setW(v){P().weight=+v>0?(P().wu=="lb"?+v*LB:+v):"";sv()}
-function saveP(){if(!ready())return toast("Add age, height and weight first");sv();tab="home";render();toast("✓ Profile saved")}
+function setU(k,v,b){P()[k]=v;sv();if(b){const q=[...b.parentNode.querySelectorAll("button")];q.forEach(x=>x.classList.toggle("on",x===b));b.parentNode.style.setProperty("--i",q.indexOf(b))}if(k=="resist"){$("#irw").classList.toggle("on",v=="yes");if(v=="yes")chk("ir",1)}else swap()}
+function setH(v){P().height=+v>=50&&+v<=250?+v:"";sv()}
+function setHI(){const f=+$("#hf").value||0,i=+$("#hi").value||0,c=Math.round((f*12+i)*IN*100)/100;P().height=(f||i)&&i>=0&&i<12&&c>=50&&c<=250?c:"";sv()}
+function setW(v){const lb=P().wu=="lb",[a,b]=lb?[44,660]:[20,300];P().weight=+v>=a&&+v<=b?(lb?+v*LB:+v):"";sv()}
+function setA(v){P().age=+v>=1&&+v<=110&&Number.isInteger(+v)?v:"";sv()}
+function setG(g,b){const p=P();p.gender=p.gender==g?"":g;sv();b.parentNode.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.textContent.includes(p.gender)&&!!p.gender));$("#gow").classList.toggle("on",p.gender=="Other");if(p.gender=="Other")setTimeout(()=>{const i=$("#pn");if(i&&!i.value)i.focus({preventScroll:true});$("#gow").scrollIntoView({behavior:"smooth",block:"nearest"})},350)}
+const pvT=v=>(v=(v||"").trim())?`Carb-Ai will refer to you as <b>${esc(v)}</b>`:"Type your pronouns in any form you like.";
+function setPn(v){P().pron=v;sv();const e=$("#pv");if(e)e.innerHTML=pvT(v)}
+function setIR(v){P().ir=+v>=.1&&+v<=20?v:"";sv()}
+/* allowed ranges: current value, min, max, range text, input ids, extra error */
+function rgv(k){const p=P(),q=id=>{const e=$("#"+id);return e?e.value.trim():""};
+if(k=="h"){if(p.hu=="cm")return{v:q("hc"),lo:50,hi:250,t:"50–250 cm",ids:["hc"]};const f=q("hf"),i=q("hi");if(f===""&&i==="")return{v:"",lo:50,hi:250,t:"1 ft 8 in – 8 ft 2 in",ids:["hf","hi"]};
+return{v:Math.round(((+f||0)*12+(+i||0))*IN*100)/100,lo:50,hi:250,t:"1 ft 8 in – 8 ft 2 in",ids:["hf","hi"],x:+i<0||+i>=12?"Inches must be between 0 and 11":""}}
+if(k=="a"){const v=$("#ag")?$("#ag").value.trim():"";return{v,lo:1,hi:110,t:"1–110 years",ids:["ag"],x:v!==""&&!Number.isInteger(+v)?"Please enter your age in whole years":""}}
+if(k=="w")return p.wu=="lb"?{v:q("wi"),lo:44,hi:660,t:"44–660 lbs",ids:["wi"]}:{v:q("wi"),lo:20,hi:300,t:"20–300 kg",ids:["wi"]};
+return{v:q("iri"),lo:.1,hi:20,t:"0.1–20",ids:["iri"]}}
+const RL={a:"age",h:"height",w:"weight",ir:"HOMA-IR value"},RT={};
+function rh(k){return`<div class="rh" id="rh_${k}"><i>i</i><span>Allowed range: ${rgv(k).t}</span><em class="rt"><b></b></em></div>`}
+function chk(k,show){clearTimeout(RT[k]);const e=$("#rh_"+k);if(!e)return"";const r=rgv(k),em=r.v==="",n=+r.v,ok=!em&&!r.x&&n>=r.lo&&n<=r.hi,was=e.dataset.s||"";
+let st=em?"":ok?"ok":show||was=="bad"?"bad":"";
+const msg=st=="ok"?"Looks good · range "+r.t:st=="bad"?(r.x||`Please enter a ${RL[k]} between ${r.t.replace(/\s*–\s*/," and ")}`):"Allowed range: "+r.t;
+e.querySelector("b").style.left=em?"0%":Math.max(0,Math.min(100,(n-r.lo)/(r.hi-r.lo)*100))+"%";
+r.ids.forEach(id=>{const i=$("#"+id);if(!i)return;i.classList.toggle("bad",st=="bad");if(st=="bad"&&was!="bad"){i.classList.remove("sk");void i.offsetWidth;i.classList.add("sk")}});
+if(st!=was||e.querySelector("span").textContent!=msg){e.dataset.s=st;e.className="rh "+st;e.querySelector("i").textContent=st=="ok"?"✓":st=="bad"?"!":"i";e.querySelector("span").textContent=msg;if(st!=was){void e.offsetWidth;e.classList.add("fx")}}
+return st}
+function vi(k){chk(k,0);RT[k]=setTimeout(()=>chk(k,1),900)}
+function chkAll(){return["a","h","w"].concat(P().resist=="yes"?["ir"]:[]).map(k=>chk(k,1))}
+function saveP(){if(chkAll().includes("bad")){const b=document.querySelector("input.bad");if(b)b.scrollIntoView({behavior:"smooth",block:"center"});return toast("Please fix the values outside the allowed range")}if(!ready())return toast("Add age, height and weight first");sv();tab="home";render();toast("✓ Profile saved")}
 function prof(){const p=P();norm(p);const f=(k,l,t="number")=>`<label>${l}</label><input type="${t}" value="${esc(p[k])}" oninput="P().${k}=this.value;sv()">`;
 return`<div class="card"><h2>Choose your measurement system</h2><div class="sys">${[["metric","Metric","cm · kg"],["imperial","Imperial","ft + in · lbs"]].map(x=>`<button data-s="${x[0]}" class="${p.sys==x[0]?"on":""}" onclick="setSys('${x[0]}')"><b>${x[1]}</b><br><small>${x[2]}</small><i class="ck">✓</i></button>`).join("")}</div><p class="mut" style="margin:10px 0 0;font-size:13px">You can still switch height or weight to any unit below.</p></div>
-<div class="card"><h2>About ${esc(cur)}</h2>${f("name","Display name","text")}<div class="row"><div>${f("age","Age")}</div><div><label>Gender</label><select onchange="P().gender=this.value;sv()">${["","Female","Male","Other"].map(g=>`<option ${p.gender==g?"selected":""}>${g}</option>`).join("")}</select></div></div>
+<div class="card"><h2>About ${esc(cur)}</h2>${f("name","Display name","text")}<label>Age</label><input id="ag" type="number" inputmode="numeric" min="1" max="110" value="${esc(p.age)}" placeholder="e.g. 28" oninput="setA(this.value);vi('a')" onblur="chk('a',1)">${rh("a")}
+<label>Gender</label><div class="gs">${[["Female","♀ Female"],["Male","♂ Male"],["Other","✦ Other"]].map(g=>`<button class="${p.gender==g[0]?"on":""}" onclick="setG('${g[0]}',this)"><span>${g[1]}</span></button>`).join("")}</div>
+<div class="col ${p.gender=="Other"?"on":""}" id="gow"><div><div class="go"><label>How do you describe your gender? <small>(optional)</small></label><input value="${esc(p.gid||"")}" placeholder="e.g. non-binary, genderfluid…" maxlength="40" oninput="P().gid=this.value;sv()"><label>Your pronouns</label><input id="pn" value="${esc(p.pron||"")}" placeholder="Type them, e.g. ze/zir, they/them" maxlength="30" autocapitalize="none" oninput="setPn(this.value)"><div class="pv" id="pv">${pvT(p.pron)}</div></div></div></div>
 <div id="ms">${ms()}</div>
 <div class="lh"><label>Insulin resistance <button class="ib" onclick="$('#irt').classList.toggle('on')">i</button></label>${seg("resist",[["no","No"],["yes","Yes"]],p.resist)}</div>
 <div class="col" id="irt"><div><div class="warn" style="margin:8px 0 0">When the body responds poorly to insulin, the same dose lowers glucose less than expected, so doses can need to be larger. A HOMA-IR number lets Carb-Ai scale your estimate.</div></div></div>
-<div class="col ${p.resist=="yes"?"on":""}" id="irw"><div><label>HOMA-IR value</label><input type="number" step="0.1" inputmode="decimal" value="${esc(p.ir)}" placeholder="e.g. 3.2" oninput="P().ir=this.value;sv()"><p class="mut" style="margin:6px 0 0;font-size:13px">HOMA-IR = fasting glucose (mg/dL) × fasting insulin (µU/mL) ÷ 405. Under about 2.0 is typical; above 2.5 suggests resistance.</p></div></div></div>
+<div class="col ${p.resist=="yes"?"on":""}" id="irw"><div><label>HOMA-IR value</label><input id="iri" type="number" step="0.1" min="0.1" max="20" inputmode="decimal" value="${esc(p.ir)}" placeholder="e.g. 3.2" oninput="setIR(this.value);vi('ir')" onblur="chk('ir',1)">${rh("ir")}<p class="mut" style="margin:6px 0 0;font-size:13px">HOMA-IR = fasting glucose (mg/dL) × fasting insulin (µU/mL) ÷ 405. Under about 2.0 is typical; above 2.5 suggests resistance.</p></div></div></div>
 <div class="card"><h2>Pump settings (optional)</h2><p class="mut" style="margin-top:0">Leave blank to use estimates. Values entered here override the formulas.</p><div class="row"><div>${f("icr","ICR (g per unit)")}</div><div>${f("isf","ISF (mg/dL per unit)")}</div></div>${f("target","Target glucose (mg/dL)")}
 <button class="w" onclick="saveP()">Save and continue</button></div>`}
 const ss=LS.cai_session;if(ss&&U[ss]){cur=ss;tab=ready()?"home":"prof";shell(1)}else auth();
 </script><script id="enhjs">
 document.addEventListener("pointerdown",e=>{const b=e.target.closest("button");if(!b)return;const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height),s=document.createElement("span");s.className="rp";s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),650)});
 </script></body></html>
+<script async src="/.netlify/scripts/ar" data-netlify-deploy-id="6adb86800522cd3142f66cce" data-netlify-site-id="3f247e52-f77e-48f4-956a-5fc8bcfdf350" data-agent-runner-id="6adb83469d4753e6a0146c6c"></script>
