@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en"><head>
 <meta name="google-site-verification" content="b7wZu9MzqoLbx1szt1Jt2RSXD4DDqiEAXgdbr6ggNKw" />
 <meta charset="utf-8">
@@ -143,6 +143,42 @@ nav button{transition:color .3s ease,transform .12s}nav button b{transition:tran
 .gav{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--on,#fff);display:grid;place-items:center;font-weight:700;flex:none}
 @keyframes shk{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}.shake{animation:shk .45s ease}
 #af{transition:opacity .22s ease,transform .3s var(--ease)}#af.fo{opacity:0;transform:translateY(8px)}
+</style><style id="enh">
+@media (prefers-reduced-motion:no-preference){
+body{background:radial-gradient(1200px 600px at 10% -10%,color-mix(in srgb,var(--pri) 18%,transparent),transparent 60%),radial-gradient(900px 500px at 110% 110%,color-mix(in srgb,var(--pri2) 18%,transparent),transparent 60%),var(--bg);background-attachment:fixed}
+.logo span{background-size:200% 100%;animation:shim 6s ease-in-out infinite}
+@keyframes shim{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.hero{position:relative;overflow:hidden;background-size:200% 200%;animation:in .6s cubic-bezier(.2,.9,.3,1.1) both,grad 10s ease infinite}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-100%);animation:sweep 4s ease-in-out 1s infinite}
+@keyframes grad{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes sweep{0%{transform:translateX(-100%)}40%,100%{transform:translateX(100%)}}
+.card{transition:transform .3s cubic-bezier(.2,.9,.3,1),box-shadow .3s}
+@media (hover:hover){.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(20,80,110,.16)}button:hover{filter:brightness(1.06)}.chip:hover{border-color:var(--pri);transform:translateY(-1px)}}
+button{position:relative;overflow:hidden;transition:transform .15s,opacity .2s,filter .2s,box-shadow .2s}
+.rp{position:absolute;border-radius:50%;background:currentColor;opacity:.25;transform:scale(0);animation:rp .6s ease-out forwards;pointer-events:none}
+@keyframes rp{to{transform:scale(4);opacity:0}}
+.chip{transition:transform .2s,border-color .2s,background-color .2s}
+.m{animation:msg .35s cubic-bezier(.2,.9,.3,1.2) both;transform-origin:bottom left}.m.u{transform-origin:bottom right}
+@keyframes msg{from{opacity:0;transform:translateY(10px) scale(.92)}}
+#sh.on .in{animation:up .4s cubic-bezier(.2,.9,.3,1.1) both}#sh.on{animation:fade .3s both}
+@keyframes fade{from{opacity:0}}
+#toast{transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1);transform:translateX(-50%) translateY(20px)}#toast.on{transform:translateX(-50%) translateY(0)}
+.food,.hist{animation:in .45s cubic-bezier(.2,.9,.3,1.1) both}
+.food:nth-child(2),.hist:nth-child(2){animation-delay:.05s}.food:nth-child(3),.hist:nth-child(3){animation-delay:.1s}.food:nth-child(4),.hist:nth-child(4){animation-delay:.15s}.food:nth-child(n+5),.hist:nth-child(n+5){animation-delay:.2s}
+.pair .n{animation:pop .7s cubic-bezier(.3,1.6,.5,1) .2s both}@keyframes pop{from{transform:scale(.4);opacity:0}}
+nav button.on b{animation:bounce .45s cubic-bezier(.3,1.6,.5,1)}@keyframes bounce{0%{transform:scale(.8)}100%{transform:translateY(-2px) scale(1.15)}}
+.av{transition:transform .3s}.av:hover{transform:rotate(-8deg) scale(1.08)}
+::view-transition-old(root){animation:vto .22s ease both}::view-transition-new(root){animation:vti .32s cubic-bezier(.2,.9,.3,1) both}
+@keyframes vto{to{opacity:0;transform:translateY(-6px)}}@keyframes vti{from{opacity:0;transform:translateY(8px)}}
+}
+</style><style id="enh2">
+.brk{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.brk div{background:var(--bg);border-radius:12px;padding:9px 11px;animation:in .5s cubic-bezier(.2,.9,.3,1.1) .25s both}.brk span{display:block;font-size:12px;color:var(--mut)}.brk b{font-size:18px}.brk small{display:block;color:var(--mut);font-size:11px}
+.ack{display:flex;gap:8px;align-items:flex-start;color:var(--tx);font-size:13px;margin:12px 0 0;cursor:pointer}.ack input{width:18px;height:18px;flex:none;margin-top:1px;accent-color:var(--pri)}
+.badge.ex{background:var(--mut)}.big{font-size:22px}.lo{color:#d9534f}.hi{color:#e08a00}.ok{color:var(--pri2)}
+.lk{background:none;color:var(--pri);padding:0;font-size:13px;text-decoration:underline}
+.fu{border:1.5px solid var(--pri2);animation:in .5s both,glow 2.4s ease-in-out infinite}@keyframes glow{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--pri2) 18%,transparent)}}
+.cta{font-size:17px;padding:16px!important;box-shadow:0 8px 22px color-mix(in srgb,var(--pri) 35%,transparent)}
+.emp{padding:12px 0}.emp>div{animation:pop .7s cubic-bezier(.3,1.6,.5,1) both}
 </style></head><body>
 <div id="app"><header><div class="logo">Carb<span>-Ai</span></div><div class="hb" id="hb"></div></header>
 <main id="v"></main><nav id="nv"></nav></div>
@@ -153,10 +189,11 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const rnd=n=>Math.round(n*10)/10;
 /* ---------- standalone AI + download layer ---------- */
 (function(){if(window.claude)return;window.__sa=1;
-const KEY=()=>{try{return LS.cai_key||""}catch(e){return""}};
+const KEY=()=>"live";
 const b64=f=>new Promise((ok,no)=>{const i=new Image;i.onload=()=>{const r=Math.min(1,1400/Math.max(i.width,i.height)),c=document.createElement("canvas");c.width=Math.round(i.width*r);c.height=Math.round(i.height*r);c.getContext("2d").drawImage(i,0,0,c.width,c.height);ok(c.toDataURL("image/jpeg",.82).split(",")[1])};i.onerror=no;i.src=URL.createObjectURL(f)});
-async function call(messages){const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"content-type":"application/json","x-api-key":KEY(),"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-sonnet-5-5",max_tokens:1500,messages})});
-const j=await r.json();if(!r.ok)throw new Error((j.error&&j.error.message)||"API error "+r.status);return j.content.map(c=>c.text||"").join("")}
+const AIURL=(/localhost|lovable\.(app|dev)$/.test(location.hostname)?"":"https://project--73efdf41-940c-4ca4-8432-65c8af80e313.lovable.app")+"/api/public/ai";
+async function call(messages){const ms=messages.map(m=>({role:m.role,content:typeof m.content=="string"?m.content:m.content.map(c=>c.type=="image"?{type:"image",data:c.source.data}:{type:"text",text:c.text})}));
+const r=await fetch(AIURL,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({messages:ms})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"AI error "+r.status);return j.text||""}
 function demoJson(p){const m=/round (\d) of 3/.exec(p);if(m&&m[1]=="1")return{status:"need_more",ask:["Demo mode: could you add a photo from the side, and tell me what sauce or oil was used?"]};
 return{status:"done",items:[{name:"Rice",carbs_g:45},{name:"Curry sauce",carbs_g:8}],total_carbs:53,confidence:"low",note:"Demo mode sample result. Add an API key (top-right menu, AI connection) for real photo analysis."}}
 const sm=async(input,o={})=>{const msgs=typeof input=="string"?[{role:"user",content:input}]:input;
@@ -234,7 +271,7 @@ function norm(p){p.sys=p.sys||"metric";p.hu=p.hu||"cm";p.wu=p.wu||"kg";if(p.ir==
 function shell(f){norm(P());$("#hb").innerHTML=`<button class="av" onclick="mnu()" aria-label="Menu">${esc(cur[0].toUpperCase())}</button>`;const v=$("#v");$("#nv").style.display="";if(f){v.innerHTML="";pt=tab;render();return}v.classList.add("lv");setTimeout(()=>{v.innerHTML="";pt=tab;render()},240)}
 function sws(d){return`<div class="sw">${THEMES.filter(t=>t[4]==d).map(t=>`<button class="swb ${t[0]==pref.th?"on":""}" style="background:linear-gradient(135deg,${t[5]} 50%,${t[2]} 50%)" title="${t[1]}" aria-label="${t[1]}" onclick="setTh('${t[0]}',event)"></button>`).join("")}</div>`}
 function mh(){const cn=THEMES.find(t=>t[0]==pref.th)[1];return`<div class="mh">Signed in as <b>${esc(cur)}</b></div><div class="ml">Light themes</div>${sws(0)}<div class="ml">Dark themes</div>${sws(1)}<div class="mh" style="padding-top:0">Current: <b>${cn}</b></div>
-<button class="mr" onclick="tgM(event)"><span>${pref.m=="dark"?"🌙 Dark mode":"☀️ Light mode"}</span><i class="tg ${pref.m=="dark"?"on":""}"></i></button>${window.__sa?`<button class="mr" onclick="akey()">🔑 AI connection · ${LS.cai_key?"live":"demo"}</button>`:""}<button class="mr" onclick="cm();tab='prof';render()">✏️ Edit profile</button><button class="mr" onclick="out()">↪ Log out</button>`}
+<button class="mr" onclick="tgM(event)"><span>${pref.m=="dark"?"🌙 Dark mode":"☀️ Light mode"}</span><i class="tg ${pref.m=="dark"?"on":""}"></i></button><button class="mr" onclick="cm();tab='prof';render()">✏️ Edit profile</button><button class="mr" onclick="out()">↪ Log out</button>`}
 function mnu(){const w=$("#mw");if(w.classList.contains("on"))return cm();w.innerHTML=`<div id="mb" onclick="cm()"></div><div id="mn">${mh()}</div>`;w.className="on"}
 function cm(){const w=$("#mw");if(!w||!w.classList.contains("on"))return;w.classList.add("out");setTimeout(()=>{w.className=""},230)}
 function mr(){const n=$("#mn");if(n)n.innerHTML=mh()}
@@ -260,23 +297,37 @@ function summ(){const p=P(),cm=+p.height,kg=+p.weight,ti=cm/IN,ft=Math.floor(ti/
 const h=p.hu=="cm"?rnd(cm)+" cm":ft+" ft "+rnd(ti-ft*12)+" in",w=p.wu=="lb"?rnd(kg/LB)+" lbs":rnd(kg)+" kg",ir=p.resist=="yes"?"Yes"+(p.ir?", HOMA-IR "+p.ir:", value needed"):"No";
 return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="margin:0">Your profile</h2><button class="sec" onclick="tab='prof';render()">Edit</button></div><div class="sum" style="margin-top:10px"><div><small>Age</small>${esc(p.age)}</div><div><small>Gender</small>${esc(p.gender||"Not set")}</div><div><small>Height</small>${h}</div><div><small>Weight</small>${w}</div><div style="grid-column:1/3"><small>Insulin resistance</small>${ir}</div></div></div>`}
 function home(){if(!ready())return`<div class="card"><h2>Set up first 👋</h2><p>Add age, weight and height once. Carb-Ai remembers them.</p><button class="w" onclick="tab='prof';render()">Set up profile</button></div>`;
-const fv=[...D().foods,...BASE].slice(0,6);
-return`<div class="hero"><h2>Hi ${esc(P().name||cur)} 👋</h2><p style="margin:4px 0 0;opacity:.9">What are you eating?</p></div>${summ()}
-<div class="card"><button class="w" style="margin-top:0" onclick="openScan()">📷 Scan meal with AI</button>
+if(!D().ok)setTimeout(safety,350);const fv=[...D().foods,...BASE].slice(0,6),lm=D().hist[0],pend=D().hist.find(x=>x.tk&&x.af==null&&x.ts&&Date.now()-x.ts>2*36e5);
+return`<div class="hero"><h2>Hi ${esc(P().name||cur)} 👋</h2><p style="margin:4px 0 0;opacity:.9">What are you eating?</p></div>${pend?`<div class="card fu"><h2>How did it go? 🩸</h2><p class="mut" style="margin-top:0">You logged <b>${esc(pend.n)}</b> (${pend.c} g, ${pend.u} U) a while ago. Adding your glucose now helps you and Carb-Ai learn how your body responds.</p><button class="w" style="margin-top:4px" onclick="addAf(${D().hist.indexOf(pend)})">Add glucose reading</button></div>`:""}${summ()}
+<div class="card"><button class="w cta" style="margin-top:0" onclick="openScan()">📷 Scan meal with AI</button>${lm?`<button class="w sec" onclick="rep_()">↻ Repeat last: ${esc(lm.n)} · ${lm.c0||lm.c} g</button>`:""}
 <div class="mut" style="margin-top:10px">Or tap a usual food:</div>${fv.map(f=>`<span class="chip" onclick="addC(${f[1]})">${esc(f[0])} · ${f[1]}g</span>`).join("")}
 <div class="row"><div><label>Carbs (g)</label><input id="cbi" type="number" inputmode="decimal" value="${M.c}" oninput="M.c=this.value;rs()"></div><div><label>Glucose (mg/dL, optional)</label><input type="number" inputmode="decimal" value="${M.bg}" oninput="M.bg=this.value;rs()"></div></div></div>
 <div id="rs"></div>`}
 function addC(c){M.c=rnd((+M.c||0)+c);const i=$("#cbi");if(i){i.value=M.c;rs()}toast("+"+c+" g added")}
 function tw(el,to,dec){cancelAnimationFrame(el._r);const f0=parseFloat(el.textContent)||0,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/600),e=1-Math.pow(1-k,3);el.textContent=(f0+(to-f0)*e).toFixed(dec);if(k<1)el._r=requestAnimationFrame(f)})(t0)}
-function rs(){const e=$("#rs");if(!e)return;if(M.c===""||+M.c<0){e.innerHTML=`<div class="card mut" style="text-align:center">Add carbs or scan a meal to see your estimate.</div>`;return}
-const d=dose(+M.c,M.bg);if(!$("#rc1"))e.innerHTML=`<div class="card"><div class="pair"><div><small>Estimated Carbohydrates</small><div class="n" id="rc1">0</div><small>grams</small></div><div><small>Estimated Bolus Insulin Dose</small><div class="n" style="color:var(--pri2)" id="rc2">0.0</div><small>UNITS</small></div></div>
-<p class="mut" id="rdet" style="text-align:center;margin:10px 0 0;font-size:13px"></p><div id="rx"></div>
-<div class="warn" style="font-weight:600">This is an approximation only. Always consult your doctor or diabetes educator before taking insulin.</div>
-<div class="row"><button class="w sec" onclick="logIt()">Save meal</button><button class="w" onclick="toast('Demo: dose would be sent to a paired pump after confirmation')">Send to pump</button></div></div>`;
-tw($("#rc1"),+M.c,0);tw($("#rc2"),d.t,1);
-$("#rdet").textContent=`Meal ${rnd(d.m)} U${d.k?` + correction ${rnd(d.k)} U`:""} · TDD ${d.p.tdd} U · ICR 1:${d.p.icr} · ISF ${d.p.isf}${d.p.mult>1?` · resistance ×${d.p.mult}`:""}`;
-$("#rx").innerHTML=P().resist=="yes"&&!(+P().ir>0)?`<div class="warn">Add your HOMA-IR value in your profile so resistance can be factored in.</div>`:""}
-function logIt(){const d=dose(+M.c,M.bg);D().hist.unshift({t:new Date().toLocaleString(),c:rnd(+M.c),u:d.t,n:M.note||"Meal"});sv();M={c:"",bg:"",note:""};toast("Saved to history");tab="hist";render()}
+const PORT=[[1,"All"],[.75,"¾"],[.5,"½"],[.25,"¼"]];
+function avgU(){const t=D().hist.filter(x=>x.tk).slice(0,20);return t.length>=3?t.reduce((a,x)=>a+x.u,0)/t.length:0}
+function rs(){const e=$("#rs");if(!e)return;if(M.c===""||+M.c<=0){e.innerHTML=`<div class="card mut emp" style="text-align:center"><div style="font-size:34px">🍽️</div>Add carbs, tap a food or scan a meal to see your estimate.</div>`;return}
+const f=M.f||1,c=rnd(+M.c*f),d=dose(c,M.bg);if(!$("#rc1"))e.innerHTML=`<div class="card"><div class="lh" style="margin:0 0 10px"><label>How much will you eat?</label><div class="seg s" id="pf">${PORT.map(x=>`<button class="${x[0]==f?"on":""}" onclick="M.f=${x[0]};document.querySelectorAll('#pf button').forEach(b=>b.classList.remove('on'));this.classList.add('on');rs()">${x[1]}</button>`).join("")}</div></div>
+<div class="pair"><div><small>Estimated Carbohydrates</small><div class="n" id="rc1">0</div><small>grams</small></div><div><small>Estimated Bolus Insulin Dose</small><div class="n" style="color:var(--pri2)" id="rc2">0.0</div><small>UNITS</small></div></div>
+<div class="brk" id="brk"></div><p class="mut" id="rdet" style="text-align:center;margin:8px 0 0;font-size:12px"></p><div id="rx"></div>
+<div class="warn" style="font-weight:600">This is an estimate from standard formulas (500 and 1800 rules), not medical advice. Always check with your doctor or diabetes educator before taking insulin.</div>
+<label class="ack"><input type="checkbox" id="ack" onchange="$('#tkb').disabled=!this.checked"> I understand this is an estimate and I'll use my own judgement.</label>
+<div class="row"><button class="w sec" onclick="logIt(0)">Just exploring</button><button class="w" id="tkb" disabled onclick="logIt(1)">✓ I took this dose</button></div></div>`;
+tw($("#rc1"),c,0);tw($("#rc2"),d.t,1);
+$("#brk").innerHTML=`<div><span>Meal dose</span><b>${rnd(d.m)} U</b><small>${c} g ÷ ${d.p.icr} g per unit</small></div><div><span>Correction</span><b>${rnd(d.k)} U</b><small>${d.k?`(${M.bg} − ${+P().target||110}) ÷ ${d.p.isf}`:M.bg?"At or below target":"No glucose entered"}</small></div>`;
+$("#rdet").textContent=`TDD ${d.p.tdd} U · ICR 1:${d.p.icr} · ISF ${d.p.isf}${d.p.mult>1?` · resistance ×${d.p.mult}`:""}${P().icr||P().isf?" · using your pump settings":" · formula estimates"}`;
+const a=avgU();let w="";if(P().resist=="yes"&&!(+P().ir>0))w+=`<div class="warn">Add your HOMA-IR value in your profile so resistance can be factored in.</div>`;
+if(a&&d.t>a*1.6)w+=`<div class="warn">This is noticeably higher than your usual logged dose (about ${rnd(a)} U). Double-check the carbs before going ahead.</div>`;
+else if(d.t>d.p.tdd*.35)w+=`<div class="warn">This dose is a large share of your estimated daily insulin. Please double-check the numbers.</div>`;
+if(M.bg&&+M.bg<70)w+=`<div class="warn">Your glucose is below 70 mg/dL. Treat the low first and talk to your care team before dosing.</div>`;$("#rx").innerHTML=w}
+function logIt(tk){const f=M.f||1,c=rnd(+M.c*f),d=dose(c,M.bg);D().hist.unshift({t:new Date().toLocaleString(),ts:Date.now(),c,c0:rnd(+M.c),u:d.t,n:M.note||"Meal",tk:tk?1:0,bg:M.bg||"",f});sv();M={c:"",bg:"",note:""};toast(tk?"Logged as taken. We'll ask how it went later.":"Saved as exploring");tab="hist";render()}
+function rep_(){const l=D().hist[0];M.c=l.c0||l.c;M.note=l.n;M.f=1;render()}
+function addAf(i){const v=prompt("Glucose about 2 hours after the meal (mg/dL):");if(v===null||!(+v>0))return;D().hist[i].af=+v;sv();toast("Thanks — reading saved");render()}
+function safety(){if(D().ok||$("#sh").classList.contains("on"))return;const e=$("#sh");e.classList.add("on");e.classList.remove("out");e.innerHTML=`<div class="in up"><div class="sb an"><div style="font-size:40px;text-align:center">🤝</div><h3 style="text-align:center">Before we start</h3>
+<p>Carb-Ai helps you <b>estimate</b> carbs and insulin using standard formulas. It's a helper, not a doctor.</p>
+<ul class="mut" style="padding-left:18px"><li>Numbers are estimates. Your body, activity, illness and stress all change what you need.</li><li><b>ICR</b> is how many grams of carbs 1 unit covers. <b>ISF</b> is how much 1 unit lowers glucose.</li><li>If your care team gave you settings, add them in Profile — they replace the formulas.</li><li>If something looks off, trust your judgement and your care team.</li></ul>
+<label class="ack"><input type="checkbox" onchange="$('#okb').disabled=!this.checked"> I understand Carb-Ai gives estimates, not medical advice.</label><button class="w" id="okb" disabled onclick="D().ok=1;sv();closeS()">Continue</button></div></div>`}
 /* ---------- foods ---------- */
 function foods(){const my=D().foods;return`<div class="card"><h2>Not sure what's in it?</h2><p class="mut" style="margin-top:0">Take photos and Carb-Ai will estimate the carbs, ask for extra angles or details if needed, and save the food for next time.</p><button class="w" style="margin-top:0" onclick="openScan('foods')">📷 Scan an unknown food</button></div>
 <div class="card"><h2>My foods</h2>${my.length?my.map((f,i)=>`<div class="food"><div>${esc(f[0])}<span class="badge">AI</span><br><small class="mut">${f[1]} g carbs</small></div><div><button class="sec" onclick="del(${i})">🗑</button> <button onclick="addC(${f[1]});tab='home';render()">Use</button></div></div>`).join(""):`<p class="mut">Foods you scan appear here.</p>`}</div>
@@ -323,8 +374,10 @@ const r=await sm(h,{cache:false,modelTier:"quick",onText:e=>{chat[chat.length-1]
 catch(e){chat[chat.length-1].content="Sorry, I couldn't reach the AI: "+((e&&e.message)||"please try again")+"."}
 cbusy=false;{const m=$("#msgs");if(tab=="chat"&&m&&m.lastElementChild)m.lastElementChild.innerHTML=bi(chat[chat.length-1])}}
 /* ---------- history & profile ---------- */
-function hist(){const h=D().hist;return`<div class="card"><h2>Meal history</h2>${h.length?h.map(x=>`<div class="hist"><b>${esc(x.n)}</b>: ${x.c} g carbs, ${x.u} U<br><small class="mut">${esc(x.t)}</small></div>`).join("")+`<button class="w sec" onclick="dl()">⬇ Download CSV</button>`:`<p class="mut">No meals saved yet.</p>`}</div>`}
-async function dl(){try{const d=await claude.use("downloads");if(!d)return toast("Download unavailable");const r=["time,meal,carbs_g,units",...D().hist.map(h=>[h.t,h.n,h.c,h.u].map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(","))];await d.save({filename:"carb-ai-history.csv",data:new Blob([r.join("\n")],{type:"text/csv"})})}catch(e){}}
+function hist(){const h=D().hist,wk=h.filter(x=>x.ts&&Date.now()-x.ts<7*864e5),tk=wk.filter(x=>x.tk),af=h.filter(x=>x.af!=null),inr=af.filter(x=>x.af>=70&&x.af<=180).length;
+const ins=h.length?`<div class="card"><h2>Your week</h2><div class="sum"><div><small>Meals logged</small><b class="big">${wk.length}</b></div><div><small>Avg carbs</small><b class="big">${wk.length?Math.round(wk.reduce((a,x)=>a+x.c,0)/wk.length):"–"}</b> g</div><div><small>Avg dose taken</small><b class="big">${tk.length?rnd(tk.reduce((a,x)=>a+x.u,0)/tk.length):"–"}</b> U</div><div><small>After-meal in range</small><b class="big">${af.length?Math.round(inr/af.length*100)+"%":"–"}</b></div></div><p class="mut" style="margin:10px 0 0">${af.length?"Every reading you add makes these patterns more useful.":"Add a glucose reading after meals to start seeing how your doses work for you."}</p></div>`:"";
+return ins+`<div class="card"><h2>Meal history</h2>${h.length?h.map((x,i)=>`<div class="hist"><b>${esc(x.n)}</b>${x.tk?`<span class="badge">taken</span>`:x.ts?`<span class="badge ex">exploring</span>`:""}<br>${x.c} g carbs${x.f&&x.f<1?` (ate ${x.f*100}%)`:""}, ${x.u} U${x.af!=null?` · after: <b class="${x.af<70?"lo":x.af>180?"hi":"ok"}">${x.af} mg/dL</b>`:x.tk?` · <button class="lk" onclick="addAf(${i})">+ add glucose after</button>`:""}<br><small class="mut">${esc(x.t)}</small></div>`).join("")+`<button class="w sec" onclick="dl()">⬇ Download CSV</button>`:`<div class="emp" style="text-align:center"><div style="font-size:34px">📒</div><p class="mut">No meals yet. Your first logged meal will show up here.</p></div>`}</div>`}
+async function dl(){try{const d=await claude.use("downloads");if(!d)return toast("Download unavailable");const r=["time,meal,carbs_g,units,status,glucose_before,glucose_after",...D().hist.map(h=>[h.t,h.n,h.c,h.u,h.tk?"taken":"exploring",h.bg||"",h.af??""].map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(","))];await d.save({filename:"carb-ai-history.csv",data:new Blob([r.join("\n")],{type:"text/csv"})})}catch(e){}}
 const seg=(k,o,v)=>`<div class="seg s p" style="--n:${o.length};--i:${Math.max(0,o.findIndex(x=>x[0]==v))}"><i class="pill"></i>${o.map(x=>`<button class="${x[0]==v?"on":""}" onclick="setU('${k}','${x[0]}',this)">${x[1]}</button>`).join("")}</div>`;
 const bdg=on=>on?`<span class="badge">custom unit</span>`:"";
 function ms(){const p=P(),dh=p.sys=="imperial"?"ftin":"cm",dw=p.sys=="imperial"?"lb":"kg",cm=+p.height||0,kg=+p.weight||0,ti=cm/IN,ft=cm?Math.floor(ti/12):"",inch=cm?rnd(ti-ft*12):"";
@@ -349,4 +402,6 @@ return`<div class="card"><h2>Choose your measurement system</h2><div class="sys"
 <div class="card"><h2>Pump settings (optional)</h2><p class="mut" style="margin-top:0">Leave blank to use estimates. Values entered here override the formulas.</p><div class="row"><div>${f("icr","ICR (g per unit)")}</div><div>${f("isf","ISF (mg/dL per unit)")}</div></div>${f("target","Target glucose (mg/dL)")}
 <button class="w" onclick="saveP()">Save and continue</button></div>`}
 const ss=LS.cai_session;if(ss&&U[ss]){cur=ss;tab=ready()?"home":"prof";shell(1)}else auth();
+</script><script id="enhjs">
+document.addEventListener("pointerdown",e=>{const b=e.target.closest("button");if(!b)return;const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height),s=document.createElement("span");s.className="rp";s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),650)});
 </script></body></html>
